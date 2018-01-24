@@ -5,5 +5,12 @@ describe "as a user" do
 
       expect(page).to have_content("Welcome")
     end
+    
+    it "I can click on the merchant's link on the welcome page" do
+      visit '/'
+      click_on "ALL THE MERCHANTS"
+
+      expect(current_path).to eq("/merchants/index")
+    end
   end
 end
