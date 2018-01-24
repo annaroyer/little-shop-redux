@@ -10,6 +10,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants/index/:id' do
+    # binding.pry
     @merchant = Merchant.find(params[:id])
     erb :"merchants/show"
   end
