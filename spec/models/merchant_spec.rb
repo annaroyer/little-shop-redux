@@ -3,7 +3,7 @@ describe Merchant do
     it "is invalid without a name" do
       merchant = Merchant.create
 
-      expect(merchant).to_not be_valid
+      expect(merchant).to be_invalid
     end
   end
 end
