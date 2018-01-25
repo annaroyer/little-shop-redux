@@ -38,24 +38,9 @@ describe "As a user" do
       Merchant.create(name: "Opakawagalaga")
       visit "/merchants"
       fill_in "merchants[name]", with: "Opakawagalaga"
-      save_and_open_page
       click_button "Find"
 
       expect(current_path).to eq("/merchants/show")
-    end
-  end
-end
-
-
-
-
-describe "As an unauthenticated user" do
-  context "when I visit '/'" do
-    it "I should see a welcome message" do
-      visit "/"
-
-      expect(current_path).to eq '/'
-      expect(page).to have_content ("I see you")
     end
   end
 end
