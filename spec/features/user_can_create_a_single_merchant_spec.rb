@@ -4,7 +4,7 @@ describe "As a user" do
       visit '/merchants/new'
 
       fill_in "merchant[name]", with: "Soianinoquisi"
-      click_button "submit"
+      click_button "Submit"
 
       expect(current_path).to eq("/merchants/1")
       expect(page).to have_content("Soianinoquisi")
