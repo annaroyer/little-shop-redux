@@ -7,11 +7,11 @@ describe "as a user" do
     end
 
     it "I can click on the merchant's link on the welcome page" do
-      
+
       visit '/'
       click_on "ALL THE MERCHANTS"
 
-      expect(current_path).to eq("/merchants/index")
+      expect(current_path).to eq("/merchants")
     end
   end
 end

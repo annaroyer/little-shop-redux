@@ -4,23 +4,27 @@ class LittleShopApp < Sinatra::Base
     erb :dashboard
   end
 
-  get '/merchants/index' do
+  get '/merchants' do
     @merchants = Merchant.all
     erb :"merchants/index"
   end
 
-  get '/merchants/index/new' do
+  get '/merchants/new' do
     erb :"merchants/new"
   end
 
-  post '/merchants/index' do
+  post '/merchants' do
     merchant = Merchant.create(params[:merchant])
-    redirect :"merchants/index/#{merchant.id}"
+    redirect :"merchants/#{merchant.id}"
   end
 
-  get '/merchants/index/:id' do
+  post '/merchants/find' do
+    merchant = Merchant.find_by(params[:merchants])
+    redirect :"merchants/#{merchant.id}"
+  end
+
+  get '/merchants/:id' do
     @merchant = Merchant.find(params[:id])
     erb :"merchants/show"
   end
-
 end
