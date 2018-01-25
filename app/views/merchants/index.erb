@@ -1,13 +1,13 @@
 <a class="button" href="/merchants/new">New Merchant</a>
 <form action="/merchants/find" method="POST">
-  <input type="text" name="merchants[name]" placeholder="Merchant name here">
-  <input type="submit" value="Find">
+  <input type="text" name="merchants[name]" placeholder="Merchant name here"/>
+  <input type="submit" value="Find"/>
 </form>
 
 <h1>All The Merchants</h1>
 
 <% @merchants.each do |merchant| %>
   <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
-  <a href="/merchants/<%= merchant.id %>/edit"><input type="button" value="Edit Merchant"></a>
-  <a href="/merchants/<%= merchant.id %>/delete"><input type="button" value="Delete Merchant"></a>
+  <a href="/merchants/<%= merchant.id %>/edit">Edit Merchant</a>
+  <a href="/merchants/<%= merchant.id %>/delete">Delete Merchant</a>
 <% end %>

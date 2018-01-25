@@ -1,6 +1,6 @@
 describe "as a user" do
   describe "when I go to merchant/id/edit" do
-    it "edits an existing merchant" do
+    it "I can edit an existing merchant" do
       Merchant.create(name: 'Sal')
       visit "merchants/1/edit"
 
