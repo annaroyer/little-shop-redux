@@ -1,4 +1,4 @@
-describe "as a user" do
+describe "As a user" do
   context "when I visit '/'" do
     it "I can see a welcome message" do
       visit '/'
