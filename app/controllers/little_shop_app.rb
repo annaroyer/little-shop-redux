@@ -13,7 +13,7 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/new"
   end
 
-  post '/merchants/new' do
+  post '/merchants' do
     merchant = Merchant.create(params[:merchant])
     redirect :"merchants/#{merchant.id}"
   end
