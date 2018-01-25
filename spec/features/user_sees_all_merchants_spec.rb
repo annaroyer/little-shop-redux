@@ -6,18 +6,16 @@ describe "As a user" do
       Merchant.create(name: "Opakawagalaga")
       Merchant.create(name: "Opakawagalaga")
       Merchant.create(name: "Opakawagalaga")
-      visit "/merchants/index"
+      visit "/merchants"
 
       expect(page).to have_content("Opakawagalaga")
     end
 
     it "I can click on new merchant" do
-      Merchant.create(name: "Opakawagalaga")
-      visit "/merchants/index"
-      binding.pry
-      click_on "New Merchant"
+      visit "/merchants"
+      click_button "New Merchant"
 
-      expect(current_path).to eq("/merchants/index/new")
+      expect(current_path).to eq("/merchants/new")
     end
 
     it "I can click on edit a merchant" do
@@ -25,7 +23,7 @@ describe "As a user" do
       visit "/merchants/index"
       click_on "Edit Merchant"
 
-      expect(current_path).to eq("/merchants/index/1/edit")
+      expect(current_path).to eq("/merchants/1/edit")
     end
 
     it "I can click on delete a merchant" do
@@ -33,16 +31,16 @@ describe "As a user" do
       visit "/merchants/index"
       click_on "Delete Merchant"
 
-      expect(current_path).to eq("/merchants/index/1/delete")
+      expect(current_path).to eq("/merchants/1/delete")
     end
 
     it "I can find a merchant by name" do
       Merchant.create(name: "Opakawagalaga")
-      visit "/merchants/index"
+      visit "/merchants"
       fill_in "merchants[name]", with: "Opakawagalaga"
       click_button "Find"
 
-      expect(current_path).to eq("/merchants/index/show")
+      expect(current_path).to eq("/merchants/show")
     end
   end
 end

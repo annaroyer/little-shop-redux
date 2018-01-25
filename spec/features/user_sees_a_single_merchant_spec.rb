@@ -6,7 +6,7 @@ describe "As a user" do
       Merchant.create(name: "Opakawagalaga")
       Merchant.create(name: "Opakawagalaga")
       Merchant.create(name: "Opakawagalaga")
-      visit '/merchants/index/2'
+      visit '/merchants/2'
 
       expect(page).to have_content("Beyonce")
     end

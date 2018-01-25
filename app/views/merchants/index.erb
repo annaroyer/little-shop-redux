@@ -1,5 +1,5 @@
-<a href="/merchants/index/new"><input type="button" value="New Merchant"></a>
-<form action="/merchants/index/show" method="post">
+<a href="/merchants/new"><input type="button" value="New Merchant"></a>
+<form action="/merchants/show" method="POST">
   <input type="text" name="merchants[name]" placeholder="Merchant name here">
   <input type="submit" value="Find">
 </form>
@@ -7,7 +7,7 @@
 <h1>All The Merchants</h1>
 
 <% @merchants.each do |merchant| %>
-  <a href="/merchants/index/<%= merchant.id %>"><p><%= merchant.name %></p></a>
-  <a href="/merchants/index/<%= merchant.id %>/edit"><input type="button" value="Edit Merchant"></a>
-  <a href="/merchants/index/<%= merchant.id %>/delete"><input type="button" value="Delete Merchant"></a>
+  <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
+  <a href="/merchants/<%= merchant.id %>/edit"><input type="button" value="Edit Merchant"></a>
+  <a href="/merchants/<%= merchant.id %>/delete"><input type="button" value="Delete Merchant"></a>
 <% end %>
