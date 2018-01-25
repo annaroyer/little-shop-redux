@@ -1,6 +1,6 @@
 describe "As a user" do
   describe "when I go to the merchant index page" do
-    it "I can create a new merchant" do
+    it "creates a new merchant" do
       visit '/merchants/new'
 
       fill_in "merchant[name]", with: "Soianinoquisi"
