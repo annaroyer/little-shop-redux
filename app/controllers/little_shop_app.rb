@@ -1,36 +1,37 @@
 class LittleShopApp < Sinatra::Base
+  set :method_override, true
 
   get '/' do
     erb :dashboard
   end
 
-  get '/merchants/index' do
+  get '/merchants' do
     @merchants = Merchant.all
     erb :"merchants/index"
   end
 
-  get '/merchants/index/new' do
+  get '/merchants/new' do
     erb :"merchants/new"
   end
 
-  post '/merchants/index' do
+  post '/merchants' do
     merchant = Merchant.create(params[:merchant])
-    redirect :"merchants/index/#{merchant.id}"
+    redirect :"merchants/#{merchant.id}"
   end
 
-  get '/merchants/index/:id/edit' do
+  get '/merchants/:id/edit' do
     @merchant = Merchant.find(params[:id])
     erb :"merchants/edit"
   end
 
-  get '/merchants/index/:id' do
+  get '/merchants/:id' do
     @merchant = Merchant.find(params[:id])
     erb :"merchants/show"
   end
 
-  put '/merchants/index/:id' do |id|
+  put '/merchants/:id' do |id|
     Merchant.update(id.to_i, params[:merchant])
-    redirect :"merchants/index"
+    redirect :"merchants"
   end
 
 end

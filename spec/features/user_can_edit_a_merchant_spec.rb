@@ -6,7 +6,7 @@ describe "as a user" do
       fill_in "merchant[name]", with: "Sal My Savior"
       click_button "submit"
 
-      expect(current_path).to eq("/merchants/index")
+      expect(current_path).to eq("/merchants")
       expect(page).to have_content("Sal My Savior")
     end
   end

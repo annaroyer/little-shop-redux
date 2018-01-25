@@ -3,5 +3,5 @@
 <h1>All The Merchants</h1>
 
 <% @merchants.each do |merchant| %>
-  <a href="/merchants/index/<%= merchant.id %>"><p><%= merchant.name %></p></a>
+  <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
 <% end %>

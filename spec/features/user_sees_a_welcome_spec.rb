@@ -11,7 +11,7 @@ describe "as a user" do
       visit '/'
       click_on "ALL THE MERCHANTS"
 
-      expect(current_path).to eq("/merchants/index")
+      expect(current_path).to eq("/merchants")
     end
   end
 end
