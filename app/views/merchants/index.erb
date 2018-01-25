@@ -7,5 +7,5 @@
 <h1>All The Merchants</h1>
 
 <% @merchants.each do |merchant| %>
-  <p> <%= merchant.name %> </p>
+  <a href="/merchants/index/<%= merchant.id %>"><p><%= merchant.name %></p></a>
 <% end %>
