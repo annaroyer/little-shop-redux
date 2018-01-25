@@ -13,7 +13,7 @@ describe "As a user" do
 
     it "I can click on new merchant" do
       visit "/merchants"
-      click_button "New Merchant"
+      click_on "New Merchant"
 
       expect(current_path).to eq("/merchants/new")
     end
@@ -40,7 +40,7 @@ describe "As a user" do
       fill_in "merchants[name]", with: "Opakawagalaga"
       click_button "Find"
 
-      expect(current_path).to eq("/merchants/show")
+      expect(current_path).to eq("/merchants/1")
     end
   end
 end
