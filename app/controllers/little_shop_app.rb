@@ -6,7 +6,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.all
+    @merchants = Merchant.where(params)
     erb :"merchants/index"
   end
 
@@ -16,12 +16,6 @@ class LittleShopApp < Sinatra::Base
 
   post '/merchants' do
     merchant = Merchant.create(params[:merchant])
-    redirect :"merchants/#{merchant.id}"
-  end
-
-# Not Part of 7 Restful Paths
-  post '/merchants/find' do
-    merchant = Merchant.find_by(params[:merchants])
     redirect :"merchants/#{merchant.id}"
   end
 

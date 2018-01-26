@@ -1,9 +1,18 @@
 body {
-  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), src=;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("https://images.unsplash.com/photo-1505801180825-f09a5f6abb1d?ixlib=rb-0.3.5&s=e71362f471c1d58217f8e35d883bf9c6&auto=format&fit=crop&w=1500&q=80");
   background-size: 1440px 800px;
   background-repeat: no-repeat;
   background-color: #000000;
   margin: 0px;
+}
+
+a.hover {
+  color: #555555;
+  background: linear-gradient(green, blue)
+}
+
+a.active {
+  color: #c8474e;
 }
 
 a {
@@ -13,27 +22,20 @@ a {
   border-width: 0;
   border-bottom-width: 1;
   border-style: dashed;
-}
-
-a.hover {
-  color: #555555;
+  padding: 2px;
+  background: linear-gradient(rgba(81,6,11,0.3), rgba(0,0,0,0.9))
 }
 
 a.visited {
   color: #ffffff
 }
 
-a.active {
-  color: #c8474e;
-}
-
 div {
-  margin-top: 528px;
-  margin-left: 845px;
+  margin-top: 515px;
+  margin-left: 850px;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  transition-delay: 5s ease;
 }
