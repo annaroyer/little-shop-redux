@@ -79,16 +79,6 @@ class LittleShopApp < Sinatra::Base
     redirect :"categories"
   end
 
-
 end
-
-
-
-
-
-
-
-
-
 
 

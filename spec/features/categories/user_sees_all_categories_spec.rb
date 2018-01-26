@@ -27,7 +27,6 @@ describe "As a user" do
       click_on "Create A Category"
 
       expect(current_path).to eq("/categories/new")
-      # save_and_open_page
     end
 
     it "I can click on edit a category" do
@@ -38,7 +37,6 @@ describe "As a user" do
       click_on "Edit Category"
 
       expect(current_path).to eq("/categories/1/edit")
-      # save_and_open_page
     end
 
     it "I can click on delete a category" do
