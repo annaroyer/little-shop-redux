@@ -1,10 +1,3 @@
-describe "Validations" do
-  it "validates name" do
-    Category.create(name: "Doyouwantmetotypeforyou").valid?
-    Category.create(name: nil).valid?
-  end
-end
-
 describe "As a user" do 
   describe "when I vist the category index page" do
     it "I can see all categories" do
