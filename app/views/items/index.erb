@@ -1,0 +1,17 @@
+<a href="/">Little Shop Home</a>
+
+<h1>Items</h1>
+<a href="/items/new">New Item</a></br></br>
+
+<% @items.each do |item| %>
+  <img src="<%= item.image %>" alt="<%= item.title %>"/>
+  <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
+  <p>$<%= item.price %></p>
+
+  <a href="/items/<%= item.id %>/edit">Edit Item</a>
+
+  <form action="/items/<%= item.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE"/>
+    <input type="submit" value="Delete Item"/>
+  </form>
+<% end %>
