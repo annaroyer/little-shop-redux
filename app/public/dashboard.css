@@ -6,12 +6,12 @@ body {
   margin: 0px;
 }
 
-a.hover {
+a:hover {
   color: #555555;
-  background: linear-gradient(green, blue)
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(81,6,11,0.3))
 }
 
-a.active {
+a:active {
   color: #c8474e;
 }
 
@@ -26,7 +26,7 @@ a {
   background: linear-gradient(rgba(81,6,11,0.3), rgba(0,0,0,0.9))
 }
 
-a.visited {
+a:visited {
   color: #ffffff
 }
 

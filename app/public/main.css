@@ -3,7 +3,7 @@ body {
 }
 
 .logo{
-  image: url("/image/little_shop_rusty50.png");
+  image: url("images/little_shop_rusty50.png");
 }
 
 h1 {
