@@ -3,5 +3,30 @@ body {
 }
 
 .logo{
-  background-image: url();
+  image: url("/image/little_shop_rusty50.png");
+}
+
+h1 {
+  color: #ffffff
+}
+
+label {
+  color: #ffffff
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.hover {
+  color: #555555;
+}
+
+a.visited {
+  color: #ffffff
+}
+
+a.active {
+  color: #c8474e;
 }
