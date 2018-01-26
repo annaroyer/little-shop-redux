@@ -7,8 +7,6 @@ describe "As a user" do
 
       visit "/items"
 
-      save_and_open_page
-
       expect(page).to have_content("puppy")
     end
 
@@ -24,7 +22,6 @@ describe "As a user" do
       Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
       visit "/items"
       click_on "Edit Item"
-      save_and_open_page
 
       expect(current_path).to eq("/items/1/edit")
     end
