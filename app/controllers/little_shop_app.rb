@@ -45,9 +45,9 @@ class LittleShopApp < Sinatra::Base
     redirect :"merchants"
   end
 
-  get 'item' do 
+  get 'items' do 
     @items = Item.all
-    erb :items/index
+    erb :"items/index"
   end
 
 
