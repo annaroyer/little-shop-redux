@@ -5,7 +5,7 @@
 </div>
 <br>
 <% @categories.each do |category| %>
-  <h2><%= category.name %></h2>
+  <a href="/categories/<%= category.id %>"><h2><%= category.name %></h2></a>
   <a href="/categories/<%= category.id %>/edit">Edit Category</a>
   <form action="/categories/<%= category.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">

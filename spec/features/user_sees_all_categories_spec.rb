@@ -1,8 +1,8 @@
 describe "Validations" do
-    it "validates name" do
-      Category.create(name: "Doyouwantmetotypeforyou").valid?
-      Category.create(name: nil).valid?
-    end
+  it "validates name" do
+    Category.create(name: "Doyouwantmetotypeforyou").valid?
+    Category.create(name: nil).valid?
+  end
 end
 
 describe "As a user" do 
@@ -52,14 +52,15 @@ describe "As a user" do
     end
 
     it "I see one category" do
-      Category.create(name: "Doyouwantmetotypeforyou")
+      category = Category.create(name: "Doyouwantmetotypeforyou")
     
       visit "/categories"
+      
+      click_on "Doyouwantmetotypeforyou"
+      
+      visit "/categories/#{category.id}"
 
-      click_on ""
-      visit "/categories/:id"
-
-      expect(page).to_not have_content(Doyouwantmetotypeforyou)
+      expect(page).to have_content("Doyouwantmetotypeforyou")
     end
 
 
