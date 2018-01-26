@@ -31,7 +31,7 @@ describe "As a user" do
       visit "/merchants"
       click_on "Delete Merchant"
 
-      expect(current_path).to eq("/merchants/1/delete")
+      expect(current_path).to eq("/merchants")
     end
 
     it "I can find a merchant by name" do

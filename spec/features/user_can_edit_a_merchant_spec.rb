@@ -1,4 +1,4 @@
-describe "as a user" do
+describe "As a user" do
   describe "when I go to merchant/id/edit" do
     it "I can edit an existing merchant" do
       Merchant.create(name: 'Sal')
