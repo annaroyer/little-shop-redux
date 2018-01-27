@@ -23,10 +23,6 @@ a.hover {
   color: #555555;
 }
 
-a.visited {
-  color: #ffffff
-}
-
 a.active {
   color: #c8474e;
 }
