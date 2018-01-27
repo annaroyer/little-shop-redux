@@ -6,7 +6,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.all
+    @merchants = Merchant.where(params)
     erb :"merchants/index"
   end
 
@@ -72,4 +72,40 @@ class LittleShopApp < Sinatra::Base
     @item = Item.find(params[:id])
     erb :"/items/show"
   end
+
+  get '/categories' do 
+    @categories = Category.all
+    erb :"categories/index"
+  end
+
+  get '/categories/new' do
+    erb :"categories/new"
+  end
+
+  get '/categories/:id' do
+    @category = Category.find(params[:id])
+    erb :"categories/show"
+  end
+
+  post '/categories' do 
+    category = Category.create(params[:category])
+    redirect :"categories"
+  end
+
+  get '/categories/:id/edit' do |id|
+    @category = Category.find(params[:id])
+    erb :"categories/edit"
+  end
+
+  put '/categories/:id' do |id|
+    Category.update(id.to_i, params[:categories])
+    redirect :"categories/#{id}"
+  end
+
+  delete '/categories/:id' do |id|
+    Category.destroy(id.to_i)
+    redirect :"categories"
+  end
 end
+
+
