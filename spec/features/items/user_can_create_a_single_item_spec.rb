@@ -9,7 +9,7 @@ describe "As a user" do
       fill_in "item[image]", with: "http://tinypuppy.png"
       click_button "Submit"
 
-      expect(current_path).to eq("/items/1")
+      expect(current_path).to eq("/items")
       expect(page).to have_content("puppy")
       expect(Item.count).to eq(1)
     end
