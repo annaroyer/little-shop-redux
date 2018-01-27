@@ -2,29 +2,33 @@ body {
   background: #ffffff;
 }
 
-.links a {
-
+.top {
+  display: flex;
+  flex-direction: row;
 }
 
 .logo {
   background-color: #540b06;
-  
+  width: 460px;
+  height: 200px;
 }
 
 .nav {
-
+  background-color: black;
 }
 
 .banner {
-
+  background-color: red;
+  width: 970px;
+  height: 200px;
 }
 
 .featured-container {
-
+  background-color: blue;
 }
 
 .all-container {
-
+  background-color: bisque;
 }
 
 .dropdown {
