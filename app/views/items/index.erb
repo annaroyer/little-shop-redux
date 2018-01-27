@@ -6,7 +6,7 @@
 <% @items.each do |item| %>
   <img src="<%= item.image %>" alt="<%= item.title %>"/>
   <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
-  <p>$<%= item.price %></p>
+  <p>$<%= '%.2f' % item.price %></p>
 
   <a href="/items/<%= item.id %>/edit">Edit Item</a>
 
