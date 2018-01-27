@@ -106,8 +106,6 @@ class LittleShopApp < Sinatra::Base
     @item = Item.find(params[:id])
     erb :"/items/show"
   end
-<<<<<<< HEAD
-=======
 
   get '/categories' do
     @categories = Category.all
@@ -124,7 +122,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/categories' do
-    category = Category.create(params[:category])
+    Category.create(params[:category])
     redirect :"categories"
   end
 
@@ -142,5 +140,4 @@ class LittleShopApp < Sinatra::Base
     Category.destroy(id.to_i)
     redirect :"categories"
   end
->>>>>>> 87a1b83f091763b9b0dc0e524a35214f139baaba
 end
