@@ -3,10 +3,6 @@ class Merchant < ActiveRecord::Base
 
   has_many :items
 
-  def self.highest_price_item
-    items.order("unit_price DESC").first
-  end
-
   def self.how_many_items?
     items.count
   end

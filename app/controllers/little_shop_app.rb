@@ -14,6 +14,10 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/new"
   end
 
+  get 'merchants-dashboard' do
+    @most_items_merchant = Merchant.items.order("unit_price DESC").first
+  end
+
   post '/merchants' do
     merchant = Merchant.create(params[:merchant])
     redirect :"merchants/#{merchant.id}"
@@ -39,7 +43,7 @@ class LittleShopApp < Sinatra::Base
     redirect :"merchants"
   end
 
-  get '/categories' do 
+  get '/categories' do
     @categories = Category.all
     erb :"categories/index"
   end
@@ -53,8 +57,8 @@ class LittleShopApp < Sinatra::Base
     erb :"categories/show"
   end
 
-  post '/categories' do 
-    category = Category.create(params[:category])
+  post '/categories' do
+    Category.create(params[:category])
     redirect :"categories"
   end
 
@@ -74,5 +78,3 @@ class LittleShopApp < Sinatra::Base
   end
 
 end
-
-
