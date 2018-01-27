@@ -1,9 +1,9 @@
 describe "As a user" do
   describe "when I visit items index page" do
     it "I can see all items" do
-      Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
-      Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
-      Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
+      Item.create(title: 'puppy', description: 'soft and fluffy', unit_price: 5500, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
+      Item.create(title: 'puppy', description: 'soft and fluffy', unit_price: 5500, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
+      Item.create(title: 'puppy', description: 'soft and fluffy', unit_price: 5500, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
 
       visit "/items"
 
@@ -19,7 +19,7 @@ describe "As a user" do
     end
 
     it "I can click on edit an item" do
-      Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
+      Item.create(title: 'puppy', description: 'soft and fluffy', unit_price: 3500, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
       visit "/items"
       click_on "Edit Item"
 
@@ -27,7 +27,7 @@ describe "As a user" do
     end
 
     it "I can click on delete an item" do
-      Item.create(title: 'puppy', description: 'soft and fluffy', price: 35, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
+      Item.create(title: 'puppy', description: 'soft and fluffy', unit_price: 3500, image: "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg")
       visit "/items"
       click_button "Delete Item"
 

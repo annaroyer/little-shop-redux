@@ -5,7 +5,7 @@ describe "As a user" do
 
       fill_in "item[title]", with: "puppy"
       fill_in "item[description]", with: "soft and fluffy"
-      fill_in "item[price]", with: 35
+      fill_in "item[unit_price]", with: 35.00
       fill_in "item[image]", with: "http://tinypuppy.png"
       click_button "Submit"
 
