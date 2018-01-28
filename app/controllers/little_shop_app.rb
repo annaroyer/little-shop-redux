@@ -48,6 +48,11 @@ class LittleShopApp < Sinatra::Base
     erb :"categories/new"
   end
 
+  get '/categories/:id/edit' do |id|
+    @category = Category.find(params[:id])
+    erb :"categories/edit"
+  end
+
   get '/categories/:id' do
     @category = Category.find(params[:id])
     erb :"categories/show"
@@ -58,14 +63,13 @@ class LittleShopApp < Sinatra::Base
     redirect :"categories"
   end
 
-  get '/categories/:id/edit' do |id|
-    @category = Category.find(params[:id])
-    erb :"categories/edit"
-  end
-
   put '/categories/:id' do |id|
     Category.update(id.to_i, params[:categories])
     redirect :"categories/#{id}"
+  end
+
+  get '/categories-dashboard' do
+    
   end
 
   delete '/categories/:id' do |id|
@@ -105,39 +109,5 @@ class LittleShopApp < Sinatra::Base
   get '/items/:id' do
     @item = Item.find(params[:id])
     erb :"/items/show"
-  end
-
-  get '/categories' do
-    @categories = Category.all
-    erb :"categories/index"
-  end
-
-  get '/categories/new' do
-    erb :"categories/new"
-  end
-
-  get '/categories/:id' do
-    @category = Category.find(params[:id])
-    erb :"categories/show"
-  end
-
-  post '/categories' do
-    Category.create(params[:category])
-    redirect :"categories"
-  end
-
-  get '/categories/:id/edit' do |id|
-    @category = Category.find(params[:id])
-    erb :"categories/edit"
-  end
-
-  put '/categories/:id' do |id|
-    Category.update(id.to_i, params[:categories])
-    redirect :"categories/#{id}"
-  end
-
-  delete '/categories/:id' do |id|
-    Category.destroy(id.to_i)
-    redirect :"categories"
   end
 end
