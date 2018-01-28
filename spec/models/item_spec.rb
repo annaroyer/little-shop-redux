@@ -37,12 +37,38 @@ describe Item do
 
   describe "Class Methods" do
     describe ".total_item_count" do
-      it "returns total item count" do
-        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "dress.jpg")
-        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "dress.jpg")
-        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "dress.jpg")
+      it "returns total count of items" do
+        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
+        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+
+        expect(Item.total_item_count).to eq(3)
+      end
+    end
+
+    describe ".average_item_price" do
+      it "returns average price per item" do
+        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
+        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+
+        expect(Item.average_item_price).to eq(25000)                
       end
     end
   end
 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

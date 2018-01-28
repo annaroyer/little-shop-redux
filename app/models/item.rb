@@ -9,20 +9,20 @@ class Item < ActiveRecord::Base
   end
 
   def self.total_item_count
-    Item.all.count
+    count
   end
 
   def self.average_item_price
-    
+    average(:unit_price).to_f.round(2)
   end
 
-  def self.most_recent_item
+  # def self.most_recent_item
     
-  end
+  # end
 
-  def self.oldest_item
+  # def self.oldest_item
     
-  end
+  # end
 
 
 end
