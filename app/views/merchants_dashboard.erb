@@ -39,13 +39,4 @@
       </div>
     </div>
   </div>
-  <h1>Edit Merchant</h1>
-
-  <form action="/merchants/<%= @merchant.id %>" method="POST">
-    <input type="hidden" name="_method" value="PUT"/>
-    <label>Name</label>
-    <input type="text" name="merchant[name]" value="<%= @merchant.name %>"/>
-
-    <input type="submit" value="Submit"/>
-  </form>
 </body>
