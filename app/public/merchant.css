@@ -129,20 +129,49 @@ nav a:hover, .dropdown:hover .dropbutton {
  width: 150px;
  margin: 10px;
  display: flex;
+ flex-wrap: wrap;
  justify-content: center;
  border-width: 2px;
  border-style: solid;
  border-color: #884036;
+ background-image: url("images/bad_merchant.jpg");
+}
+
+.utility {
+  display: flex;
+  flex-direction: row;
 }
 
 .merchant_link {
+ border-bottom: 1px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.merchant_link a {
+  width: 150px;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.edit_link {
-
+.utility a {
+  width: 75px;
+  height: 0px;
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.delete_link {
-  
+.utility form {
+  width: 75px;
+  height: 0px;
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

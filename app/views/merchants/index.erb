@@ -47,7 +47,9 @@
     <div class="merchants">
     <% @merchants.each do |merchant| %>
       <div class="merchant">
-        <a href="/merchants/<%= merchant.id %>" class="merchant-link"><p><%= merchant.name %></p></a>
+        <div class="merchant_link">
+          <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
+        </div>
         <div class="utility">
           <a href="/merchants/<%= merchant.id %>/edit" class="edit-link">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="POST" class="delete-link">
