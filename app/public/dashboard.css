@@ -31,6 +31,10 @@ div {
   margin-left: 850px;
 }
 
+audio {
+  display: none;
+}
+
 .links {
   display: flex;
   flex-direction: column;
