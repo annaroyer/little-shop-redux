@@ -5,6 +5,6 @@ class Item < ActiveRecord::Base
   belongs_to :category
 
   def set_price
-    self.price = (unit_price / 100).round(2) if unit_price
+    self.price = (unit_price / 100).to_f.round(2) if unit_price
   end
 end

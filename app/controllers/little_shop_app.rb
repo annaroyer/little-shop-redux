@@ -69,7 +69,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/categories-dashboard' do
-    
+    @categories = Category.all
+    erb :"/categories/dashboard"
   end
 
   delete '/categories/:id' do |id|
