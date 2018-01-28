@@ -4,17 +4,23 @@ body {
 
 .top {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  background-color: burlywood;
 }
 
 .logo {
-  background-color: #540b06;
+  background-image: url("images/little_shop_rusty50.png");
   width: 460px;
-  height: 200px;
+  height: 250px;
 }
 
 .nav {
   background-color: black;
+  height: 40px;
+  width: 1424px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .banner {
@@ -32,9 +38,18 @@ body {
 }
 
 .dropdown {
-
+  background-color: aliceblue;
+  border-color: green;;
+  border-width: 2px;
+  width: 100px;
+  margin: 7px;
 }
 
 .dropdown-content {
-
+  display: hidden;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
