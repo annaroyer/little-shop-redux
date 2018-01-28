@@ -14,7 +14,8 @@ class Seed
     Item.create!( title:       row[:name],
                   description: row[:description],
                   unit_price:  row[:unit_price],
-                  image:       "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg"
+                  image:       "https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg",
+                  merchant_id: row[:merchant_id]
                 )
   end
 
