@@ -8,8 +8,8 @@ a {
   text-decoration: none;
 }
 
-h1 p h2 h3 h4 h5 h6 {
-  color: #303030;
+h1 {
+  color: #ffffff;
 }
 
 a:hover {
@@ -115,6 +115,7 @@ nav a:hover, .dropdown:hover .dropbutton {
 .all-container h1 {
  display: flex;
  justify-content: center;
+ color: #ffffff;
 }
 
 .merchants {
@@ -140,6 +141,7 @@ nav a:hover, .dropdown:hover .dropbutton {
 .utility {
   display: flex;
   flex-direction: row;
+  background: rgba(0,0,0,0.5);
 }
 
 .merchant_link {
@@ -155,7 +157,6 @@ nav a:hover, .dropdown:hover .dropbutton {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .utility a {
