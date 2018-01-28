@@ -11,6 +11,7 @@ class Seed
   end
 
   CSV.foreach("./db/csv/items.csv", OPTIONS) do |row|
+    require 'pry'; binding.pry
     Item.create!( title:       row[:name],
                   description: row[:description],
                   unit_price:  row[:unit_price],
