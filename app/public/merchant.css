@@ -6,7 +6,7 @@ body {
 .top {
   display: flex;
   justify-content: flex-start;
-  background-color: #303030;
+  background: linear-gradient(to right, #232323, #303030)
 }
 
 .logo {
@@ -17,7 +17,7 @@ body {
 }
 
 .nav {
-  background-color: #540b06;
+  background: linear-gradient(#232323, #303030);
   height: 40px;
   width: 1440px;
   display: flex;
@@ -27,7 +27,6 @@ body {
 
 .banner {
   background-image: url("images/banner.jpeg");
-  
   width: 1200px;
   height: 150px;
 }
