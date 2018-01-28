@@ -16,6 +16,12 @@ body {
   height: 150px;
 }
 
+.banner {
+  background-image: url("images/banner.jpeg");
+  width: 1200px;
+  height: 150px;
+}
+
 .nav {
   background: linear-gradient(#232323, #303030);
   height: 40px;
@@ -23,20 +29,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-}
-
-.banner {
-  background-image: url("images/banner.jpeg");
-  width: 1200px;
-  height: 150px;
-}
-
-.featured-container {
-  background-color: blue;
-}
-
-.all-container {
-  background-color: bisque;
 }
 
 .dropdown {
@@ -90,5 +82,13 @@ body {
 }
 
 nav a:hover, .dropdown:hover .dropbutton {
-  background-color: red;
+  background-color: #884036;
+}
+
+.featured-container {
+  background-color: blue;
+}
+
+.all-container {
+  background-color: bisque;
 }
