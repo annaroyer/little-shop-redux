@@ -120,11 +120,29 @@ nav a:hover, .dropdown:hover .dropbutton {
 .merchants {
   display: flex;
   border-color: #93726d;
-  border-width: 2px;
   flex-wrap: wrap;
-  margin: 25px;
+  justify-content: space-between;
 }
 
 .merchant {
+ height: 150px;
+ width: 150px;
+ margin: 10px;
+ display: flex;
+ justify-content: center;
+ border-width: 2px;
+ border-style: solid;
+ border-color: #884036;
+}
+
+.merchant_link {
+
+}
+
+.edit_link {
+
+}
+
+.delete_link {
   
 }
