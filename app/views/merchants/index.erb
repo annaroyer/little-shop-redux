@@ -44,16 +44,20 @@
   </div>
   <div class="all-container">
     <a href="merchants"><h1>All Merchants</h1></a>
+    <div class="merchants">
     <% @merchants.each do |merchant| %>
-      <div class="merchants">
+      <div class="merchant">
         <a href="/merchants/<%= merchant.id %>" class="merchant-link"><p><%= merchant.name %></p></a>
-        <a href="/merchants/<%= merchant.id %>/edit" class="edit-link">Edit Merchant</a>
-        <form action="/merchants/<%= merchant.id %>" method="POST" class="delete-link">
-          <input type="hidden" name="_method" value="DELETE"/>
-          <input type="submit" value="Delete Merchant"/>
-        </form>
+        <div class="utility">
+          <a href="/merchants/<%= merchant.id %>/edit" class="edit-link">Edit</a>
+          <form action="/merchants/<%= merchant.id %>" method="POST" class="delete-link">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="Delete"/>
+          </form>
+        </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
 
