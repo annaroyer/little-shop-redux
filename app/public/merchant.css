@@ -6,7 +6,7 @@ body {
 .top {
   display: flex;
   justify-content: flex-start;
-  background-color: burlywood;
+  background-color: #303030;
 }
 
 .logo {
@@ -27,6 +27,7 @@ body {
 
 .banner {
   background-image: url("images/banner.jpeg");
+  
   width: 1200px;
   height: 150px;
 }
