@@ -38,25 +38,26 @@
     </div>
   </div>
 </div>
-<div class="featured-container">
-  <h1>Featured Merchants</h1>
-</div>
-<div class="all-container">
-  <a href="merchants"><h1>All Merchants</h1></a>
-  <% @merchants.each do |merchant| %>
-    <div class="merchants">
-      <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
-      <a href="/merchants/<%= merchant.id %>/edit">Edit Merchant</a>
-      <form action="/merchants/<%= merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE"/>
-        <input type="submit" value="Delete Merchant"/>
-      </form>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="featured-container">
+    <h1>Featured Merchants</h1>
+  </div>
+  <div class="all-container">
+    <a href="merchants"><h1>All Merchants</h1></a>
+    <% @merchants.each do |merchant| %>
+      <div class="merchants">
+        <a href="/merchants/<%= merchant.id %>" class="merchant-link"><p><%= merchant.name %></p></a>
+        <a href="/merchants/<%= merchant.id %>/edit" class="edit-link">Edit Merchant</a>
+        <form action="/merchants/<%= merchant.id %>" method="POST" class="delete-link">
+          <input type="hidden" name="_method" value="DELETE"/>
+          <input type="submit" value="Delete Merchant"/>
+        </form>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-
-<!-- <a class="button" href="/merchants/new">New Merchant</a>
+<a class="button" href="/merchants/new">New Merchant</a>
 <form action="/merchants/" method="POST">
   <input type="text" name="merchants[name]" placeholder="Merchant name here"/>
   <input type="submit" value="Find"/>
@@ -71,4 +72,4 @@
     <input type="hidden" name="_method" value="DELETE"/>
     <input type="submit" value="Delete Merchant"/>
   </form>
-<% end %> -->
+<% end %>

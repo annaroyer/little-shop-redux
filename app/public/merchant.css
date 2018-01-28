@@ -77,10 +77,26 @@ nav a:hover, .dropdown:hover .dropbutton {
   background-color: #884036;
 }
 
+.container {
+  background-color: #93726d;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+}
+
 .featured-container {
-  background-color: blue;
+  background-color: whitesmoke;
+  width: 35%
 }
 
 .all-container {
-  background-color: bisque;
+  background-color: rebeccapurple;
+  width: 931;
+}
+
+.merchants {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
