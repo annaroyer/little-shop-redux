@@ -1,5 +1,15 @@
+<a href="/items">All Items</a>
+<a href="/">Home</a>
+
 <h1>Items Info</h1>
 
-<h4>Total Items: <%= @items.count %></h4>
-<h4>Average Price Per Item: <%= @items.average_item_price %></h4>
-<h4>
+<h4>Total Items: <%= Item.count %></h4>
+<h4>Average Price Per Item: <%= Item.average_item_price %></h4>
+<h4>Most Recently Created Item: <%= @most_recently_created.title %></h4>
+<img src="<%= @most_recently_created.image %>" alt="<%= @most_recently_created.title %>">
+<h4>$<%= "%.2f" % @most_recently_created.price %></h4>
+<h4>Created <%= @most_recently_created.created_at %></h4>
+<h4>Oldest Item: <%= @oldest.title %></h4>
+<img src="<%= @oldest.image %>" alt="<%= @oldest.title %>">
+<h4>$<%= @oldest.price %></h5>
+<h4>Created <%= @oldest.created_at %></h4>
