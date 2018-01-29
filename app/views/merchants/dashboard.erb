@@ -8,8 +8,7 @@
    <li><%= item.title %></li>
 <% end %>
 </ul>
-<h1>Merchant With the Highest Priced Item:</h1>
-  <h2><%= @with_highest_price.name %></h2>
+<h1>Merchant with the Highest Priced Item: <%= @with_highest_price.name %></h1>
 <table>
   <tr>
     <td><h2>Merchant Name</h2></td>
@@ -20,7 +19,7 @@
   <tr>
     <td><%= merchant.name %></td>
     <td><%= merchant.items.count %></td>
-    <td>$<%= merchant.total_price_of_items %></td>
+    <td>$<%= "%.2f" % merchant.total_price_of_items %></td>
   </tr>
 <% end %>
 </table>

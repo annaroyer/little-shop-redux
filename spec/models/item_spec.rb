@@ -39,11 +39,11 @@ describe Item do
 
     describe ".average_item_price" do
       it "returns average price per item" do
-        Item.create(title: "dress", description: "vintage", unit_price: 250.00, image: "banner.jpeg")
-        Item.create(title: "shirt", description: "small", unit_price: 250.00, image: "banner.jpeg")
-        Item.create(title: "pantalon", description: "viejo", unit_price: 250.00, image: "banner.jpeg")
+        Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
+        Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
 
-        expect(Item.average_item_price).to eq(250.00)
+        expect(Item.average_item_price).to eq(110.00)
       end
     end
   end

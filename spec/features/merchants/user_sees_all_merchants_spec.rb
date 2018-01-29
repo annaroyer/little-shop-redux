@@ -33,14 +33,5 @@ describe "As a user" do
 
       expect(current_path).to eq("/merchants")
     end
-
-    it "I can find a merchant by name" do
-      Merchant.create(name: "Opakawagalaga")
-      visit "/merchants"
-      fill_in "merchants[name]", with: "Opakawagalaga"
-      click_button "Find"
-
-      expect(current_path).to eq("/merchants")
-    end
   end
 end
