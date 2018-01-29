@@ -52,8 +52,8 @@ describe Merchant do
       it "finds the total price of all items" do
         merchant = Merchant.create(name: "Dill")
         merchant.items.create(title: 'pickles', description: 'spicy', unit_price: 500, image: 'pickle-jar.jpg')
-        merchant.items.create(title: 'pickles', description: 'crunchy', unit_price: 300, image: 'pickle-jar.jpg')
-        merchant.items.create(title: 'pickles', description: 'sour', unit_price: 400, image: 'pickle-jar.jpg')
+        merchant.items.create(title: 'peanut butter', description: 'crunchy', unit_price: 300, image: 'peanut-butter-jar.jpg')
+        merchant.items.create(title: 'lemons', description: 'sour', unit_price: 400, image: 'lemons.jpg')
 
         expect(merchant.total_price_of_items).to eq(12.00)
       end
