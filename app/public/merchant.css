@@ -149,6 +149,10 @@ a:active {
   font-size: 11pt;
 }
 
+.merchant:hover .merchant_link {
+  
+}
+
 .merchant_link {
  display: flex;
  align-items: center;
