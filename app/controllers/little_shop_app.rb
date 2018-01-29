@@ -6,7 +6,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.where(params)
+    @merchants = Merchant.all
     erb :"merchants/index"
   end
 
@@ -14,13 +14,16 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/new"
   end
 
-  get 'merchants-dashboard' do
-    @most_items_merchant = Merchant.items.order("unit_price DESC").first
+  get '/merchants-dashboard' do
+    @merchants = Merchant.all
+    @with_most_items = Merchant.most_items
+    @with_highest_price = Merchant.highest_priced_item
+    erb :"merchants/dashboard"
   end
 
   post '/merchants' do
-    Merchant.create(params[:merchant])
-    redirect :"merchants"
+    merchant = Merchant.create(params[:merchant])
+    redirect :"merchants/#{merchant.id}"
   end
 
   get '/merchants/:id' do
@@ -83,6 +86,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
+    @most_recently_created = Item.most_recently_created
+    @oldest = Item.oldest
     erb :"items/dashboard"
   end
 
@@ -92,6 +97,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/new' do
+    @merchants = Merchant.all
+    @categories = Category.all
     erb :"/items/new"
   end
 

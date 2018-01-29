@@ -1,5 +1,5 @@
 body {
-  background: #ffffff;
+  background: linear-gradient(#232323, #303030);
   margin: 0px;
 }
 
@@ -8,8 +8,8 @@ a {
   text-decoration: none;
 }
 
-h1 p h2 h3 h4 h5 h6 {
-  color: #303030;
+h1 {
+  color: #ffffff;
 }
 
 a:hover {
@@ -22,84 +22,77 @@ a:active {
 
 .top {
   display: flex;
-  justify-content: flex-start;
   background: linear-gradient(to right, #232323, #303030)
 }
 
 .logo {
   background-image: url("images/little_shop_rusty50.png");
-  background-repeat: no-repeat;
   width: 275px;
   height: 150px;
 }
 
 .banner {
   background-image: url("images/banner.jpeg");
+  background-repeat: no-repeat;
   width: 100%;
-  height: 150px;
 }
 
 .nav {
-  background: linear-gradient(#232323, #303030);
-  height: 40px;
-  width: 100%;
+  background: linear-gradient(#303030, #000);
+  height: 45px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+  justify-content: space-around;
 }
 
 .dropbutton {
-  margin: 9px;
-  margin-right: 100px;
+  margin: 10px;
+}
+
+.dropdown {
+  min-width: 206px;
+}
+
+.dropdown:hover {
+  background-color: #4f4f4f;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #b18e8d;
-  min-width: 160px;
+  min-width: 206px;
+  background-color: #606060;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
 .dropdown .dropbutton {
   font-size: 16px;
   border: none;
-  outline: none;
   color: #ffffff;
   background-color: inherit;
+  outline: none;
 }
 
 .dropdown-content a {
-  color: #000000;
+  color: #ffffff;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
 }
 
-.dropdown-content a:hover {
-  background-color: #93726d;
+.dropdown a:hover {
+  background-color: #4f4f4f;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-nav a:hover, .dropdown:hover .dropbutton {
-  background-color: #884036;
-}
-
 .container {
-  background-color: #000000;
+  background-color: inherit;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   margin: 0px;
+  bottom: 0px;
 }
 
 .featured-container {
@@ -108,41 +101,120 @@ nav a:hover, .dropdown:hover .dropbutton {
 }
 
 .all-container {
-  background-color: #3f3f3f;
-  width: 931;
+  background: inherit;
+  width: 100%;
 }
 
 .all-container h1 {
  display: flex;
  justify-content: center;
+ color: #ffffff;
 }
 
 .merchants {
   display: flex;
-  border-color: #93726d;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .merchant {
- height: 150px;
- width: 150px;
- margin: 10px;
- display: flex;
- justify-content: center;
- border-width: 2px;
- border-style: solid;
- border-color: #884036;
+  height: 150px;
+  width: 150px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #884036;
+  background-image: url("images/bad_merchant.jpg");
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+}
+
+.utility {
+  display: none;
+}
+
+.merchant:hover .utility {
+  display: block;
+  width: 150px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-around;
+  font-size: 11pt;
+}
+
+.utility:hover {
+  background: rgba(0,0,0,0.7);
 }
 
 .merchant_link {
-
+ display: flex;
+ align-items: center;
 }
 
-.edit_link {
-
+.merchant_link a {
+  width: 150px;
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.delete_link {
-  
+.utility input {
+  border: 1px solid #000000;
+  width: 75px;
+  background: rgba(0,0,0,0.5);
+  color: #ffffff;
+  font-size: 11pt;
+  margin-bottom: 0px;
+  outline: none;
+}
+
+.top_button {
+  width: 35px;
+  border-radius: 20%;
+  border: 1px #c8474e;
+  border-style: solid;
+  position: fixed;
+  bottom: 25px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c8474e;
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+}
+
+.top_button:hover {
+  background-color: #884036;
+}
+
+@media screen and (max-width: 571px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 18%;
+  }
+
+  .dropbutton {
+    margin-right: 0px;
+  }
+
+  .logo {
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .top {
+    width: 100%;
+    background: linear-gradient(#232323, #303030);
+  }
 }

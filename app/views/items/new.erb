@@ -9,8 +9,16 @@
   Description:<br>
   <textarea name="item[description]"></textarea><br><br>
   Price:<br>
-  $<input type="number" step="0.01" name="item[unit_price]" value=""/><br><br>
+  $<input type="number" step="0.01" name="item[unit_price]"/><br><br>
   Image URL:<br>
   <input type="url" name="item[image]"/><br><br>
+  Merchant:<br>
+  <% @merchants.each do |merchant| %>
+    <input type="radio" name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %><br>
+  <% end %><br>
+  Category:<br>
+  <% @categories.each do |category| %>
+    <input type="radio" name="item[category_id]" value="<%= category.id %>"/><%= category.name %><br>
+  <% end %><br>
   <input type="submit" value="Submit"/>
 </form>

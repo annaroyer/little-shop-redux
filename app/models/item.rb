@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  validates_presence_of :title, :description, :price, :image
+  validates :title, :description, :price, :image, uniqueness: true, presence: true
   before_validation :set_price
   belongs_to :merchant
   belongs_to :category
@@ -8,20 +8,19 @@ class Item < ActiveRecord::Base
     self.price = (unit_price / 100).to_f.round(2) if unit_price
   end
 
-  def self.total_item_count
-    count
-  end
-
   def self.average_item_price
-    average(:unit_price).to_f.round(2)
+    average(:price).to_f.round(2)
   end
 
-  def self.most_recent_item
-    Item.last
+  def self.count_by_merchant_id
+    group(:merchant_id).order("count_all").count
   end
 
-  def self.oldest_item
-    Item.first
+  def self.most_recently_created
+    order("created_at DESC").first
   end
 
+  def self.oldest
+    order("created_at DESC").last
+  end
 end

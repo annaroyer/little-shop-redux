@@ -1,0 +1,26 @@
+<a href="/merchants">All Merchants</a>
+<a href="/">Home</a>
+
+<h1>Merchant With The Most Items:</h1>
+ <h2><%= @with_most_items.name %></h2>
+ <ul>
+ <% @with_most_items.items do |item| %>
+   <li><%= item.title %></li>
+<% end %>
+</ul>
+<h1>Merchant with the Highest Priced Item:</h1>
+<h2> <%= @with_highest_price.name %></h2>
+<table>
+  <tr>
+    <td><h2>Merchant Name</h2></td>
+    <td><h2>Total Items</h2></td>
+    <td><h2>Total Price of Items</h2></td>
+  </tr>
+<% @merchants.each do |merchant| %>
+  <tr>
+    <td><%= merchant.name %></td>
+    <td><%= merchant.items.count %></td>
+    <td>$<%= "%.2f" % merchant.total_price_of_items %></td>
+  </tr>
+<% end %>
+</table>
