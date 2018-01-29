@@ -50,7 +50,6 @@ a:active {
 
 .dropdown {
   min-width: 206px;
-  outline: none;
 }
 
 .dropdown:hover {
@@ -70,6 +69,7 @@ a:active {
   border: none;
   color: #ffffff;
   background-color: inherit;
+  outline: none;
 }
 
 .dropdown-content a {
@@ -133,6 +133,7 @@ a:active {
 .utility {
   background: rgba(0,0,0,0.5);
   display: flex;
+  align-content: flex-end;
   font-size: 11pt;
 }
 
@@ -143,16 +144,15 @@ a:active {
 
 .merchant_link a {
   width: 150px;
-  height: 85px;
+  height: 130px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .utility input {
-  border: 1px solid #884036;
+  border: 1px solid #000000;
   width: 75px;
-  height: 65px;
   background: rgba(0,0,0,0.5);
   color: #ffffff;
 }
