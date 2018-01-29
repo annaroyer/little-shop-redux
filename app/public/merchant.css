@@ -131,11 +131,19 @@ a:active {
 }
 
 .utility {
+  display: none;
+}
+
+.merchant:hover .utility {
+  display: block;
+  width: 150px;
+  background: rgba(0,0,0,0.5);
+  color: #ffffff;
+  font-size: 12;
   background: rgba(0,0,0,0.5);
   display: flex;
+  justify-content: space-around;
   font-size: 11pt;
-  height: 10px;
-  margin: 0px;
 }
 
 .merchant_link {
