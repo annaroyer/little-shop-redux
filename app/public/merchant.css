@@ -38,7 +38,6 @@ a:active {
 }
 
 .nav {
-  position: sticky;
   background: linear-gradient(#303030, #000);
   height: 6%;
   display: flex;
@@ -126,16 +125,14 @@ a:active {
   margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #884036;
+  border: 2px solid #884036;
   background-image: url("images/bad_merchant.jpg");
   box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
 }
 
 .utility {
-  display: flex;
   background: rgba(0,0,0,0.5);
+  display: flex;
 }
 
 .merchant_link {
@@ -160,13 +157,12 @@ a:active {
   align-items: center;
 }
 
-.utility form {
+.utility input {
+  border: 1px solid #884036;
   width: 75px;
-  height: 0px;
-  margin-top: 27px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 65px;
+  background: rgba(0,0,0,0.5);
+  color: #ffffff;
 }
 
 .top_button {

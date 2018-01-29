@@ -47,8 +47,10 @@
           <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
         </div>
         <div class="utility">
-          <a href="/merchants/<%= merchant.id %>/edit" class="edit-link">Edit</a>
-          <form action="/merchants/<%= merchant.id %>" method="POST" class="delete-link">
+          <form action="/merchants/<%= merchant.id %>" method="GET">
+            <input type="submit" value="Edit"/>
+          </form>
+          <form action="/merchants/<%= merchant.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE"/>
             <input type="submit" value="Delete"/>
           </form>
