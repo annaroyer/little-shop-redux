@@ -55,6 +55,16 @@ describe Item do
         expect(Item.average_item_price).to eq(25000)                
       end
     end
+
+    describe ".most_recent_item" do 
+      it "returns most recently created item" do
+        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
+        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+
+        expect(Item.most_recent_item).to eq(item_3)
+      end
+    end
   end
 
 end

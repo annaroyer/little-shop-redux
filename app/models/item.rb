@@ -16,9 +16,9 @@ class Item < ActiveRecord::Base
     average(:unit_price).to_f.round(2)
   end
 
-  # def self.most_recent_item
-    
-  # end
+  def self.most_recent_item
+    Item.last
+  end
 
   # def self.oldest_item
     
