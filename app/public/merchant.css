@@ -22,7 +22,6 @@ a:active {
 
 .top {
   display: flex;
-  justify-content: flex-start;
   background: linear-gradient(to right, #232323, #303030)
 }
 
@@ -36,49 +35,41 @@ a:active {
 .banner {
   background-image: url("images/banner.jpeg");
   width: 100%;
-  height: 150px;
 }
 
 .nav {
+  position: sticky;
   background: linear-gradient(#303030, #232323);
   height: 6%;
-  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
 }
 
 .dropbutton {
   margin: 10px;
   margin-right: 100px;
+  outline: none;
+  border: none;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #b18e8d;
   min-width: 160px;
+  background-color: #b18e8d;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
 .dropdown .dropbutton {
   font-size: 16px;
   border: none;
-  outline: none;
   color: #ffffff;
   background-color: inherit;
 }
 
 .dropdown-content a {
-  color: #000000;
+  color: #ffffff;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
 }
 
@@ -121,36 +112,32 @@ nav a:hover, .dropdown:hover .dropbutton {
 
 .merchants {
   display: flex;
-  border-color: #93726d;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .merchant {
- height: 150px;
- width: 150px;
- margin-left: 40px;
- margin-right: 40px;
- margin-bottom: 40px;
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
- border-width: 2px;
- border-style: solid;
- border-color: #884036;
- background-image: url("images/bad_merchant.jpg");
+  height: 150px;
+  width: 150px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #884036;
+  background-image: url("images/bad_merchant.jpg");
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
 }
 
 .utility {
   display: flex;
-  flex-direction: row;
   background: rgba(0,0,0,0.5);
 }
 
 .merchant_link {
- border-bottom: 1px;
  display: flex;
- justify-content: center;
  align-items: center;
 }
 
@@ -178,6 +165,25 @@ nav a:hover, .dropdown:hover .dropbutton {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.top_button {
+  width: 35px;
+  border-radius: 20%;
+  border: 1px #c8474e;
+  border-style: solid;
+  position: fixed;
+  bottom: 25px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c8474e;
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+}
+
+.top_button:hover {
+  background-color: #884036;
 }
 
 @media screen and (max-width: 571px) {
