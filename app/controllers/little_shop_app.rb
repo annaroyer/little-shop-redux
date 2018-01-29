@@ -120,4 +120,9 @@ class LittleShopApp < Sinatra::Base
     erb :"/items/show"
   end
 
+  get '/api/v1/items/:id' do |id|
+    item = Item.find(id)
+    item.to_json
+  end
+
 end
