@@ -1,5 +1,5 @@
 body {
-  background: #3f3f3f;
+  background: linear-gradient(#232323, #303030);
   margin: 0px;
 }
 
@@ -39,7 +39,7 @@ a:active {
 
 .nav {
   position: sticky;
-  background: linear-gradient(#303030, #232323);
+  background: linear-gradient(#303030, #000);
   height: 6%;
   display: flex;
   justify-content: flex-end;
@@ -48,14 +48,20 @@ a:active {
 .dropbutton {
   margin: 10px;
   margin-right: 100px;
-  outline: none;
-  border: none;
+}
+
+.dropdown {
+  min-width: 206px;
+}
+
+.dropdown:hover {
+  background-color: #93726d;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  min-width: 160px;
+  min-width: 206px;
   background-color: #b18e8d;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -73,16 +79,12 @@ a:active {
   display: block;
 }
 
-.dropdown-content a:hover {
+.dropdown a:hover {
   background-color: #93726d;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-nav a:hover, .dropdown:hover .dropbutton {
-  background-color: #884036;
 }
 
 .container {
@@ -100,7 +102,7 @@ nav a:hover, .dropdown:hover .dropbutton {
 }
 
 .all-container {
-  background-color: #3f3f3f;
+  background: linear-gradient(#232323, #303030);
   width: 100%;
 }
 
