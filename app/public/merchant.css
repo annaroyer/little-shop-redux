@@ -149,15 +149,6 @@ a:active {
   align-items: center;
 }
 
-.utility a {
-  width: 75px;
-  height: 0px;
-  margin-top: 27px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .utility input {
   border: 1px solid #884036;
   width: 75px;
