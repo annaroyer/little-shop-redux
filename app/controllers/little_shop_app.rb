@@ -68,7 +68,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   put '/categories/:id' do |id|
-    Category.update(id.to_i, params[:categories])
+    Category.update(id.to_i, params[:category])
     redirect :"categories/#{id}"
   end
 

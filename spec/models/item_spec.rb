@@ -65,20 +65,15 @@ describe Item do
         expect(Item.most_recent_item).to eq(item_3)
       end
     end
+
+    describe ".oldest_item" do
+      it "returns the oldest item" do
+        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
+        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+
+        expect(Item.oldest_item).to eq(item_1)
+      end
+    end
   end
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -20,10 +20,8 @@ class Item < ActiveRecord::Base
     Item.last
   end
 
-  # def self.oldest_item
-    
-  # end
-
+  def self.oldest_item
+    Item.first
+  end
 
 end
-
