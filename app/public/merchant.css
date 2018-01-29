@@ -1,0 +1,148 @@
+body {
+  background: #ffffff;
+  margin: 0px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+h1 p h2 h3 h4 h5 h6 {
+  color: #303030;
+}
+
+a:hover {
+  color: #c8474e;
+}
+
+a:active {
+  color: #555555;
+}
+
+.top {
+  display: flex;
+  justify-content: flex-start;
+  background: linear-gradient(to right, #232323, #303030)
+}
+
+.logo {
+  background-image: url("images/little_shop_rusty50.png");
+  background-repeat: no-repeat;
+  width: 275px;
+  height: 150px;
+}
+
+.banner {
+  background-image: url("images/banner.jpeg");
+  width: 100%;
+  height: 150px;
+}
+
+.nav {
+  background: linear-gradient(#232323, #303030);
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbutton {
+  margin: 9px;
+  margin-right: 100px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #b18e8d;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown .dropbutton {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background-color: inherit;
+}
+
+.dropdown-content a {
+  color: #000000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #93726d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+nav a:hover, .dropdown:hover .dropbutton {
+  background-color: #884036;
+}
+
+.container {
+  background-color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+.featured-container {
+  background-color: whitesmoke;
+  width: 35%
+}
+
+.all-container {
+  background-color: #3f3f3f;
+  width: 931;
+}
+
+.all-container h1 {
+ display: flex;
+ justify-content: center;
+}
+
+.merchants {
+  display: flex;
+  border-color: #93726d;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.merchant {
+ height: 150px;
+ width: 150px;
+ margin: 10px;
+ display: flex;
+ justify-content: center;
+ border-width: 2px;
+ border-style: solid;
+ border-color: #884036;
+}
+
+.merchant_link {
+
+}
+
+.edit_link {
+
+}
+
+.delete_link {
+  
+}
