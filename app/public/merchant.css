@@ -40,7 +40,7 @@ a:active {
 }
 
 .nav {
-  background: linear-gradient(#232323, #303030);
+  background: linear-gradient(#303030, #232323);
   height: 40px;
   width: 100%;
   display: flex;
@@ -109,7 +109,7 @@ nav a:hover, .dropdown:hover .dropbutton {
 
 .all-container {
   background-color: #3f3f3f;
-  width: 931;
+  width: 100%;
 }
 
 .all-container h1 {
@@ -128,7 +128,9 @@ nav a:hover, .dropdown:hover .dropbutton {
 .merchant {
  height: 150px;
  width: 150px;
- margin: 10px;
+ margin-left: 40px;
+ margin-right: 40px;
+ margin-bottom: 40px;
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
