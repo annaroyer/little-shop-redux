@@ -16,7 +16,10 @@ a:active {
 }
 
 a {
+  display: flex;
+  justify-content: flex-end;
   color: #ffffff;
+  flex-direction: column-reverse;
   text-decoration: none;
   border-color: #540b06;
   border-width: 0;
@@ -27,8 +30,9 @@ a {
 }
 
 div {
-  margin-top: 620px;
-  margin-left: 850px;
+  display: flex;
+  margin-top: 43%;
+  margin-left: 59%;
 }
 
 audio {
