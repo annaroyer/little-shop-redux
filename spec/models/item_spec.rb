@@ -36,43 +36,14 @@ describe Item do
   end
 
   describe "Class Methods" do
-    describe ".total_item_count" do
-      it "returns total count of items" do
-        Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
-        Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
-        Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
-
-        expect(Item.total_item_count).to eq(3)
-      end
-    end
 
     describe ".average_item_price" do
       it "returns average price per item" do
-        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
-        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
-        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "dress", description: "vintage", unit_price: 250.00, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 250.00, image: "banner.jpeg")
+        Item.create(title: "pantalon", description: "viejo", unit_price: 250.00, image: "banner.jpeg")
 
-        expect(Item.average_item_price).to eq(25000)
-      end
-    end
-
-    describe ".most_recent_item" do
-      it "returns most recently created item" do
-        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
-        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
-        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
-
-        expect(Item.most_recent_item).to eq(item_3)
-      end
-    end
-
-    describe ".oldest_item" do
-      it "returns the oldest item" do
-        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
-        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
-        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
-
-        expect(Item.oldest_item).to eq(item_1)
+        expect(Item.average_item_price).to eq(250.00)
       end
     end
   end

@@ -83,7 +83,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
-    
+    @items = Item.all
     erb :"items/dashboard"
   end
 
