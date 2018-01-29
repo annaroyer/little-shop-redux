@@ -14,10 +14,6 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/new"
   end
 
-  get 'merchants-dashboard' do
-    @most_items_merchant = Merchant.items.order("unit_price DESC").first
-  end
-
   post '/merchants' do
     Merchant.create(params[:merchant])
     redirect :"merchants"
