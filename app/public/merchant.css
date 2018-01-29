@@ -87,7 +87,7 @@ a:active {
 }
 
 .container {
-  background-color: #000000;
+  background-color: inherit;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -101,7 +101,7 @@ a:active {
 }
 
 .all-container {
-  background: linear-gradient(#232323, #303030);
+  background: inherit;
   width: 100%;
 }
 
@@ -133,10 +133,9 @@ a:active {
 .utility {
   background: rgba(0,0,0,0.5);
   display: flex;
-  align-content: flex-end;
   font-size: 11pt;
   height: 10px;
-
+  margin: 0px;
 }
 
 .merchant_link {

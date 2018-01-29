@@ -1,43 +1,39 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="<%= url("/merchant.css")%>">
+  <link rel="stylesheet" type="text/css" href="../../../merchant.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <div class="top">
-  <a href="/"><div class="logo">
-  </div></a>
   <div class="banner">
+    <a href="/"><img src="../../../images/little_shop_rusty50.png"></img></a>
   </div>
 </div>
-<div class="nav">
+<nav class="nav">
   <div class="dropdown">
-    <button class="dropbutton">Merchants
-    </button>
+    <a href="/merchants"><button class="dropbutton">Merchants</button></a>
     <div class="dropdown-content">
-      <a href="/merchants-dashboard">Merchants Home</a>
+      <a href="/merchants-dashboard">Merchants Dashboard</a>
       <a href="/merchants/show">Find Merchants</a>
       <a href="/merchants/new">Create New Merchant</a>
     </div>
   </div>
   <div class="dropdown">
-    <button class="dropbutton">Items
-    </button>
+    <a href="/categories"><button class="dropbutton">Categories</button></a>
     <div class="dropdown-content">
-      <a href="/items-dashboard">Items Home</a>
-      <a href="/items/show">Find Items</a>
-      <a href="/items/new">Create New Item</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbutton">Categories
-    </button>
-    <div class="dropdown-content">
-      <a href="/categories-dashboard">Categories Home</a>
+      <a href="/categories-dashboard">Categories Dashboard</a>
       <a href="/categories/show">Find Categories</a>
       <a href="/categories/new">Create New Category</a>
     </div>
   </div>
-</div>
+  <div class="dropdown">
+    <a href="/items"><button class="dropbutton">Items</button></a>
+    <div class="dropdown-content">
+      <a href="/items-dashboard">Items Dashboard</a>
+      <a href="/items/show">Find Items</a>
+      <a href="/items/new">Create New Item</a>
+    </div>
+  </div>
+</nav>
 <h1>Create New Merchant</h1>
 <form action="/merchants" method="POST">
   <label>Merchant</label>

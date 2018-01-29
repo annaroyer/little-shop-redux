@@ -6,7 +6,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.where(params)
+    @merchants = Merchant.all
     erb :"merchants/index"
   end
 
@@ -120,5 +120,5 @@ class LittleShopApp < Sinatra::Base
     item = Item.find(id)
     item.to_json
   end
-  
+
 end

@@ -5,7 +5,7 @@
 </head>
 <div class="top">
   <div class="banner">
-    <a href="/"><img src="images/little_shop_rusty50.png"></img></a>
+    <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
   </div>
 </div>
 <nav class="nav">
@@ -44,10 +44,10 @@
           <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
         </div>
         <div class="utility">
-          <form action="/merchants/<%= merchant.id %>" method="GET">
+          <form action="/merchants/<%= merchant.id %>/edit" method="GET">
             <input type="submit" value="Edit"/>
           </form>
-          <form action="/merchants/<%= merchant.id %>" method="POST">
+          <form action="/merchants/<%= merchant.id %>/delete" method="POST">
             <input type="hidden" name="_method" value="DELETE"/>
             <input type="submit" value="Delete"/>
           </form>
