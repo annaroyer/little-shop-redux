@@ -4,7 +4,7 @@ body {
 }
 
 a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -22,7 +22,8 @@ a:active {
 
 .top {
   display: flex;
-  background: linear-gradient(to right, #232323, #303030)
+  background: linear-gradient(to right, #232323, #303030);
+  justify-content: flex-end;
 }
 
 .logo {
@@ -134,6 +135,10 @@ a:active {
   display: none;
 }
 
+.utility:hover {
+  background: rgba(0,0,0,0.7);
+}
+
 .merchant:hover .utility {
   display: block;
   width: 150px;
@@ -142,10 +147,6 @@ a:active {
   display: flex;
   justify-content: space-around;
   font-size: 11pt;
-}
-
-.utility:hover {
-  background: rgba(0,0,0,0.7);
 }
 
 .merchant_link {
@@ -169,6 +170,10 @@ a:active {
   font-size: 11pt;
   margin-bottom: 0px;
   outline: none;
+}
+
+.utility input:hover {
+  background: rgba(0,0,0,0.7);
 }
 
 .top_button {
