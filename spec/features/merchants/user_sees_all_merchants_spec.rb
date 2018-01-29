@@ -20,16 +20,24 @@ describe "As a user" do
 
     it "I can click on edit a merchant" do
       Merchant.create(name: "Opakawagalaga")
+
       visit "/merchants"
-      click_on "Edit Merchant"
+
+      within(".utility") do
+        first(:button, "Edit").click
+      end
 
       expect(current_path).to eq("/merchants/1/edit")
     end
 
     it "I can click on delete a merchant" do
       Merchant.create(name: "Opakawagalaga Epunifahorious")
+
       visit "/merchants"
-      click_on "Delete Merchant"
+
+      within(".utility") do
+        first(:button, "Delete").click
+      end
 
       expect(current_path).to eq("/merchants")
     end
