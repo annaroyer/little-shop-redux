@@ -64,7 +64,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   put '/categories/:id' do |id|
-    Category.update(id.to_i, params[:categories])
+    Category.update(id.to_i, params[:category])
     redirect :"categories/#{id}"
   end
 
@@ -76,6 +76,10 @@ class LittleShopApp < Sinatra::Base
   delete '/categories/:id' do |id|
     Category.destroy(id.to_i)
     redirect :"categories"
+  end
+
+  get '/items-dashboard' do
+    erb :"items/dashboard"
   end
 
   get '/items' do
@@ -116,4 +120,5 @@ class LittleShopApp < Sinatra::Base
     item = Item.find(id)
     item.to_json
   end
+  
 end
