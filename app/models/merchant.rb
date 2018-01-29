@@ -9,4 +9,5 @@ class Merchant < ActiveRecord::Base
   def self.total_price_of_items
     items.sum("unit_price")
   end
+
 end

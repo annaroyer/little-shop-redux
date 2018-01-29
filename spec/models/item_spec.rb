@@ -27,7 +27,7 @@ describe Item do
 
   describe "Instance Methods" do
     describe "#price" do
-      it "returns an price in dollars as a decimal" do
+      it "returns price in dollars as a decimal" do
         item = Item.create(title: "puppy", description: "soft and fluffy", unit_price: 3599, image: "http://tinypuppy.png")
 
         expect(item.price).to eq(35.99)
@@ -38,9 +38,9 @@ describe Item do
   describe "Class Methods" do
     describe ".total_item_count" do
       it "returns total count of items" do
-        item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
-        item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
-        item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
 
         expect(Item.total_item_count).to eq(3)
       end
@@ -52,11 +52,11 @@ describe Item do
         item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
         item_3 = Item.create(title: "pantalon", description: "viejo", unit_price: 25000, image: "banner.jpeg")
 
-        expect(Item.average_item_price).to eq(25000)                
+        expect(Item.average_item_price).to eq(25000)
       end
     end
 
-    describe ".most_recent_item" do 
+    describe ".most_recent_item" do
       it "returns most recently created item" do
         item_1 = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
         item_2 = Item.create(title: "shirt", description: "small", unit_price: 25000, image: "banner.jpeg")
