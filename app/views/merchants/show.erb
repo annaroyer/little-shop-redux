@@ -38,9 +38,24 @@
     </div>
   </div>
 </div>
-<h1>This is the merchant you are looking for</h1>
+<div class="container">
+  <div class="all-container">
+    <h1>Find Merchants</h1>
+    <div class="merchants">
+      <div class="merchant">
+        <div class="merchant_link">
+          <a href="/merchants/<%= @merchant.id %>"><p><%= @merchant.name %></p></a>
+        </div>
+        <div class="utility">
+          <a href="/merchants/<%= @merchant.id %>/edit" class="edit-link">Edit</a>
+          <form action="/merchants/<%= @merchant.id %>" method="POST" class="delete-link">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="Delete"/>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <li> <%= @merchant.name %> </li>
-</ul>
 <a href="/merchants">Return to Merchant Dashboard</a>

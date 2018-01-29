@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  validates_presence_of :name
+  validates :name, uniqueness: true, presence: true
   has_many :items
 
   def self.most_expensive_item

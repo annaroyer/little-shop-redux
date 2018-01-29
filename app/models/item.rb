@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  validates_presence_of :title, :description, :price, :image
+  validates :title, :description, :price, :image, uniqueness: true, presence: true
   before_validation :set_price
   belongs_to :merchant
   belongs_to :category

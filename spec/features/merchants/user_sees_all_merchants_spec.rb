@@ -40,7 +40,7 @@ describe "As a user" do
       fill_in "merchants[name]", with: "Opakawagalaga"
       click_button "Find"
 
-      expect(current_path).to eq("/merchants")
+      expect(current_path).to eq("/merchants/")
     end
   end
 end
