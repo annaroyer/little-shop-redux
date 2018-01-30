@@ -6,7 +6,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.all
+    @merchants = Merchant.where("name LIKE ?", "%#{params[:name]}%")
     erb :"merchants/index"
   end
 
@@ -47,7 +47,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/categories' do
-    @categories = Category.all
+    @categories = Category.where("name LIKE ?", "%#{params[:name]}%")
     erb :"categories/index"
   end
 
@@ -92,7 +92,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items' do
-    @items = Item.all
+    @items = Item.where("title LIKE ?", "%#{params[:title]}%")
     erb :"/items/index"
   end
 
