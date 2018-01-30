@@ -9,10 +9,10 @@ describe "As a user" do
 
 
       fill_in "category[name]", with: "Mooing"
-      
+
       click_button "Submit"
 
-      expect(current_path).to eq("/categories")
+      expect(current_path).to eq("/categories/1")
       expect(page).to have_content("Mooing")
     end
   end
