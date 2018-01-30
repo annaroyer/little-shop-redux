@@ -12,8 +12,7 @@ def self.most_items
 end
 
   def self.highest_priced_item
-    select("merchants.*, items.*")
-      .joins(:items)
+      joins(:items)
       .order("price DESC")
       .first
   end

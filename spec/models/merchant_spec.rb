@@ -23,7 +23,10 @@ describe Merchant do
         merchant_3.items.create(title: "Watermelon", description: "seedless", unit_price: 350, image: 'picnic.jpg')
         merchant_3.items.create(title: "Cantaloupe", description: "medium", unit_price: 300, image: 'cantaloupe.jpg')
 
-        expect(Merchant.highest_priced_item.name).to eq("Sherry")
+        highest_priced_item = Merchant.highest_priced_item
+
+        expect(highest_priced_item.name).to eq(merchant_2.name)
+        expect(highest_priced_item.id).to eq(merchant_2.id)
       end
     end
 

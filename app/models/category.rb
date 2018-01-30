@@ -17,6 +17,6 @@ class Category < ActiveRecord::Base
   end
 
   def average_item_price
-    items.average(:price).to_f.round(2)
+    (items.average(:unit_price).to_f / 100).round(2)
   end
 end
