@@ -226,7 +226,7 @@ a:active {
 }
 
 .side {
-  background-image: url("images/create_clown.jpg");
+  background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.4), url("images/create_clown.jpg"));
   background-repeat: no-repeat;
 }
 
