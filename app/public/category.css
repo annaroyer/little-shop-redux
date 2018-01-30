@@ -40,6 +40,7 @@ a:active {
 .nav {
   background: linear-gradient(#303030, #000);
   height: 45px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   position: sticky;
@@ -51,6 +52,8 @@ a:active {
 }
 
 .dropdown {
+  display: flex;
+  justify-content: center;
   min-width: 206px;
 }
 
@@ -112,7 +115,9 @@ a:active {
   display: flex;
   flex-wrap: wrap;
   border: 2px solid #884036;
-  background-image: url("images/bad_merchant.jpg");
+  background-image: url("images/hallway.jpeg");
+  background-size: cover;
+
   box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
   border-radius: 15px;
 }
@@ -133,6 +138,8 @@ a:active {
 
 .utility:hover {
   background: rgba(0,0,0,0.7);
+  border-radius: 15px;
+
 }
 
 .category_link {
