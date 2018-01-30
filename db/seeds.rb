@@ -5,11 +5,11 @@ require './app/models/item'
 
 class Seed
   OPTIONS = {headers: true, header_converters: :symbol}
-  images = ["https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg",
-            "https://img.brainjet.com/filter:scale/slides/2/9/2/0/2/2/2920220617/60ff2c82de98be41cda8324c659cb0800d1df69d.jpeg?mw=615",
-            "https://iso.500px.com/wp-content/uploads/2014/03/51260092-1170-440x440.jpeg",
-            "http://2.bp.blogspot.com/-7dDx6i8kngY/T2trRZBLzEI/AAAAAAAAEjQ/sZYULyYTXXk/s1600/cute-baby-animals-in-cup-019.jpg",
-            "https://winkgo.com/wp-content/uploads/2015/02/29-Tiny-Baby-Animals-so-Cute-They-Will-Take-Your-Cares-Away-06.jpg"
+  images = ["https://s3.amazonaws.com/backpackersverse/wp-content/uploads/2016/07/20101209/Doll-Enjoys-Burning-Her-Victims-Alive.jpg",
+            "http://buzzvital.com/wp-content/uploads/-000//1/desktop-1429122811.jpg",
+            "https://s3.amazonaws.com/backpackersverse/wp-content/uploads/2016/07/20100018/Ventriloquist-Doll-Speaks-In-Demonic-Tongues.jpg",
+            "https://i.ebayimg.com/thumbs/images/g/vTAAAOSwsZJaZOzh/s-l225.jpg",
+            "https://s-media-cache-ak0.pinimg.com/236x/a2/c1/c1/a2c1c1fd816c761a07dfe1c9e1c78e4c--creepy-dolls-siamese.jpg"
             ]
   count = 0
 
