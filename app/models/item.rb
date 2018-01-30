@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
     self.price = (unit_price / 100).to_f.round(2) if unit_price
   end
 
-  def self.average_item_price
+  def self.average_price
     average(:price).to_f.round(2)
   end
 

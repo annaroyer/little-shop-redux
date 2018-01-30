@@ -37,13 +37,13 @@ describe Item do
 
   describe "Class Methods" do
 
-    describe ".average_item_price" do
+    describe ".average_price" do
       it "returns average price per item" do
         Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
         Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
         Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
 
-        expect(Item.average_item_price).to eq(110.00)
+        expect(Item.average_price).to eq(110.00)
       end
     end
   end
