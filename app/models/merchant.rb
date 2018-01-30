@@ -12,7 +12,7 @@ class Merchant < ActiveRecord::Base
   end
 
   def total_price_of_items
-    items.sum(:price)
+    items.total_price
   end
 
   def self.highest_priced_item

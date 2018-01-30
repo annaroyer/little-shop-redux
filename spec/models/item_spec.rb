@@ -12,7 +12,7 @@ describe Item do
       expect(item).to be_invalid
     end
 
-    it "is invalid without a price" do
+    it "is invalid without a unit price" do
       item = Item.create(title: "puppy", description: "soft and fluffy", image: "http://tinypuppy.png")
 
       expect(item).to be_invalid
