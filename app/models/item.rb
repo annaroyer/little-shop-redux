@@ -12,10 +12,6 @@ class Item < ActiveRecord::Base
     average(:price).to_f.round(2)
   end
 
-  def self.count_by_merchant_id
-    group(:merchant_id).order("count_all").count
-  end
-
   def self.most_recently_created
     order("created_at DESC").first
   end

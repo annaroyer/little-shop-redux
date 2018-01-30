@@ -16,8 +16,6 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants-dashboard' do
     @merchants = Merchant.all
-    @with_most_items = Merchant.most_items
-    @with_highest_price = Merchant.highest_priced_item
     erb :"merchants/dashboard"
   end
 
@@ -86,8 +84,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
-    @most_recently_created = Item.most_recently_created
-    @oldest = Item.oldest
+    @items = Item.all
     erb :"items/dashboard"
   end
 
@@ -133,5 +130,4 @@ class LittleShopApp < Sinatra::Base
     item = Item.find(id)
     item.to_json
   end
-
 end

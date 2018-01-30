@@ -2,14 +2,14 @@
 <a href="/">Home</a>
 
 <h1>Merchant With The Most Items:</h1>
- <h2><%= @with_most_items.name %></h2>
+ <h2><%= @merchants.most_items.name %></h2>
  <ul>
- <% @with_most_items.items do |item| %>
+ <% @merchants.most_items.items do |item| %>
    <li><%= item.title %></li>
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>
-<h2> <%= @with_highest_price.name %></h2>
+<h2> <%= @merchants.highest_priced_item.name %></h2>
 <table>
   <tr>
     <td><h2>Merchant Name</h2></td>

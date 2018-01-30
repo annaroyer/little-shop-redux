@@ -72,7 +72,13 @@ img {
   max-width: 200px;
 }
 
-.buttons input, a  {
-  color: black;
-  
+button, input  {
+  color: white;
+  background-color: black;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 10px;
+}
+
+input {
+  border: none;
 }

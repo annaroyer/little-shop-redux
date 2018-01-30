@@ -26,8 +26,8 @@
           <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
           <p>$<%= '%.2f' % item.price %></p>
 
-          <figcaption class="buttons">
-            <button><a href="/items/<%= item.id %>/edit">Edit</a></button>
+          <figcaption>
+            <a href="/items/<%= item.id %>/edit">Edit</a>
             <form action="/items/<%= item.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
               <button><input type="submit" value="Delete Item"/></button>
