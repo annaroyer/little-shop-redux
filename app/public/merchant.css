@@ -1,6 +1,5 @@
 body {
-  /* background: linear-gradient(#232323, #303030); */
-  background-color: #fff;
+  background: linear-gradient(#232323, #303030);
   margin: 0px;
 }
 
@@ -91,19 +90,19 @@ a:active {
 .find {
   display: inline-block;
   box-sizing: border-box;
-  width: 150px;
-  height: 42px;
+  width: 125px;
+  height: 26px;
   cursor: pointer;
-  top: 0;
+  /* top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
   padding: 0 20px;
   overflow: hidden;
   border: none;
   -webkit-border-radius: 21px;
   border-radius: 21px;
-  font: normal 20px/normal "Antic", Helvetica, sans-serif;
+  font: normal 14px;
   color: rgba(140,140,140,1);
   text-decoration: normal;
   text-overflow: ellipsis;
@@ -119,7 +118,7 @@ a:active {
 }
 
 .find:focus {
-  width: 213px;
+  width: 195px;
   cursor: default;
   padding: -13px 20px 0;
   color: rgba(255,255,255,1);
@@ -166,7 +165,7 @@ a:active {
   display: flex;
   flex-wrap: wrap;
   border: 2px solid #884036;
-  background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9) ), url("images/bad_merchant.jpg");
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/bad_merchant.jpg");
   box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
 }
 
