@@ -18,4 +18,8 @@ class Merchant < ActiveRecord::Base
   def self.highest_priced_item
     joins(:items).order("unit_price").last
   end
+
+  def self.alphabetized
+    order(:name)
+  end
 end

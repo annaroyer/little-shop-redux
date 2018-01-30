@@ -17,4 +17,8 @@ class Category < ActiveRecord::Base
   def average_item_price
     items.average_price
   end
+
+  def self.alphabetized
+    order(:name)
+  end
 end
