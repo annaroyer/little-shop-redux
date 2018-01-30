@@ -72,6 +72,7 @@ a:active {
 .dropdown-content a {
   color: #ffffff;
   padding: 12px 16px;
+  width: 84%;
 }
 
 .dropdown a:hover {
@@ -86,7 +87,7 @@ a:active {
 }
 
 .find {
-  width: 100px;
+  width: 125px;
   height: 26px;
   cursor: pointer;
   padding: 0 20px;
@@ -101,6 +102,7 @@ a:active {
   box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5) inset;
   transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   outline: none;
+  margin-top: 5px;
 }
 
 .find:hover{
@@ -110,7 +112,7 @@ a:active {
 }
 
 .find:focus {
-  width: 150px;
+  width: 195px;
   cursor: default;
   padding: -13px 20px 0;
   color: rgba(255,255,255,1);
@@ -156,7 +158,6 @@ a:active {
   flex-wrap: wrap;
   border: 2px solid #884036;
   background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/bad_merchant.jpg");
-  transition: 6s ease;
   box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
 }
 
@@ -175,8 +176,6 @@ a:active {
   background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-around;
-  font-size: 11pt;
-  transition: 6s ease;
 }
 
 .merchant:hover .merchant a {
@@ -199,7 +198,7 @@ a:active {
 .utility input {
   border: 1px solid #000000;
   width: 75px;
-  background: rgba(0,0,0,0.5);
+  background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.4));
   color: #ffffff;
   font-size: 11pt;
   margin-bottom: 0px;
@@ -208,7 +207,7 @@ a:active {
 
 .utility input:hover {
   background: rgba(0,0,0,0.7);
-  cursor: zoom-in;
+  cursor: hand;
 }
 
 .top_button {

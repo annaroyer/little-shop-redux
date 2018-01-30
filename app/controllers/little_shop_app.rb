@@ -22,8 +22,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/merchants' do
-    Merchant.create(params[:merchant])
-    redirect :"merchants"
+    merchant = Merchant.create(params[:merchant])
+    redirect :"merchants/#{merchant.id}"
   end
 
   get '/merchants/:id' do
@@ -66,8 +66,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/categories' do
-    Category.create(params[:category])
-    redirect :"categories"
+    category = Category.create(params[:category])
+    redirect :"categories/#{category.id}"
   end
 
   put '/categories/:id' do |id|
@@ -77,7 +77,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/categories-dashboard' do
     @categories = Category.all
-    erb :"/categories/dashboard"
+    erb :"categories/dashboard"
   end
 
   delete '/categories/:id' do |id|
@@ -93,38 +93,38 @@ class LittleShopApp < Sinatra::Base
 
   get '/items' do
     @items = Item.where("title LIKE ?", "%#{params[:title]}%")
-    erb :"/items/index"
+    erb :"items/index"
   end
 
   get '/items/new' do
     @merchants = Merchant.all
     @categories = Category.all
-    erb :"/items/new"
+    erb :"items/new"
   end
 
   post '/items' do
-    Item.create(params[:item])
-    redirect :"/items"
+    item = Item.create(params[:item])
+    redirect :"items/#{item.id}"
   end
 
   get '/items/:id/edit' do
     @item = Item.find(params[:id])
-    erb :"/items/edit"
+    erb :"items/edit"
   end
 
   put '/items/:id' do |id|
     Item.update(id.to_i, params[:item])
-    redirect :"/items/#{id}"
+    redirect :"items/#{id}"
   end
 
   delete '/items/:id' do |id|
     Item.destroy(id.to_i)
-    redirect :"/items"
+    redirect :"items"
   end
 
   get '/items/:id' do
     @item = Item.find(params[:id])
-    erb :"/items/show"
+    erb :"items/show"
   end
 
   get '/api/v1/items/:id' do |id|
