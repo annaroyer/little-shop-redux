@@ -86,40 +86,6 @@ a:active {
   align-items: center;
 }
 
-.merchant input {
-  width: 125px;
-  height: 26px;
-  cursor: pointer;
-  padding: 0 20px;
-  overflow: hidden;
-  border: none;
-  border-radius: 21px;
-  font-size: 14px;
-  color: rgba(140,140,140,1);
-  text-decoration: normal;
-  text-overflow: ellipsis;
-  background: rgba(113,52,44,0.8);
-  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5) inset;
-  transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-  outline: none;
-  margin-top: 5px;
-}
-
-.merchant input:hover {
-  color: rgba(181,181,181,1);
-  background: rgba(0,0,0,0.4);
-  transition: all 600ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-}
-
-.merchant input:focus {
-  width: 195px;
-  cursor: default;
-  padding: -13px 20px 0;
-  background: rgba(113,52,44,0.8);
-  color: rgba(255,255,255,1);
-  transition: all 600ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
-}
-
 .find {
   width: 125px;
   height: 26px;
@@ -246,6 +212,66 @@ a:active {
 .utility input:hover {
   background: rgba(0,0,0,0.7);
   cursor: hand;
+}
+
+.create-container {
+  display: flex;
+  background: inherit;
+  flex-direction: row-reverse;
+  width: 33.6%;
+  height: 340px;
+  background-image: url("images/create_clown.jpg");
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.side {
+  background-image: url("images/create_clown.jpg");
+  background-repeat: no-repeat;
+  width: 50px;
+}
+
+.create {
+  display: flex;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+  height: 340px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-items: center;
+}
+
+.create input {
+  width: 125px;
+  height: 26px;
+  cursor: pointer;
+  padding: 0 20px;
+  overflow: hidden;
+  border: none;
+  border-radius: 21px;
+  font-size: 14px;
+  color: rgba(140,140,140,1);
+  text-decoration: normal;
+  text-overflow: ellipsis;
+  background: rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 2px 0 rgba(0,0,0,0.5) inset;
+  transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  outline: none;
+  margin-top: 5px;
+}
+
+.create input:hover {
+  color: rgba(181,181,181,1);
+  background: rgba(0,0,0,0.4);
+  transition: all 600ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+}
+
+.create input:focus {
+  width: 195px;
+  cursor: default;
+  padding: -13px 20px 0;
+  background: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,1);
+  transition: all 600ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
 }
 
 .top_button {
