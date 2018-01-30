@@ -26,13 +26,13 @@
           <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
           <p>$<%= '%.2f' % item.price %></p>
 
-          <div class="buttons">
-            <a href="/items/<%= item.id %>/edit"><button>Edit Item</button></a>
+          <figcaption class="buttons">
+            <button><a href="/items/<%= item.id %>/edit">Edit</a></button>
             <form action="/items/<%= item.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
-              <input type="submit" value="Delete Item"/>
+              <button><input type="submit" value="Delete Item"/></button>
             </form>
-          </div>
+          </figcaption>
       </figure>
     <% end %>
   </main>

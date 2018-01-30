@@ -3,9 +3,7 @@ class Category < ActiveRecord::Base
   has_many :items
 
   def self.sort_by_item_price
-    select("categories.*, items.*")
-      .joins(:items)
-      .order("unit_price DESC")
+    joins(:items).order("unit_price DESC")
   end
 
   def self.most_expensive_item

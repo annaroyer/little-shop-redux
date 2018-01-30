@@ -8,10 +8,11 @@ class Seed
   images = ["https://i.pinimg.com/564x/39/f0/5f/39f05f7c2df0d2d5eec301a32c8fb38a.jpg",
             "https://img.brainjet.com/filter:scale/slides/2/9/2/0/2/2/2920220617/60ff2c82de98be41cda8324c659cb0800d1df69d.jpeg?mw=615",
             "https://iso.500px.com/wp-content/uploads/2014/03/51260092-1170-440x440.jpeg",
-            "http://2.bp.blogspot.com/-7dDx6i8kngY/T2trRZBLzEI/AAAAAAAAEjQ/sZYULyYTXXk/s1600/cute-baby-animals-in-cup-019.jpg"
+            "http://2.bp.blogspot.com/-7dDx6i8kngY/T2trRZBLzEI/AAAAAAAAEjQ/sZYULyYTXXk/s1600/cute-baby-animals-in-cup-019.jpg",
+            "https://winkgo.com/wp-content/uploads/2015/02/29-Tiny-Baby-Animals-so-Cute-They-Will-Take-Your-Cares-Away-06.jpg"
             ]
   count = 0
-  
+
   CSV.foreach("./db/csv/merchants.csv", OPTIONS) do |row|
     Merchant.create!(row.to_hash)
   end
@@ -21,7 +22,7 @@ class Seed
     Item.create!( title:       row[:name],
                   description: row[:description],
                   unit_price:  row[:unit_price],
-                  image:       images[count % 4],
+                  image:       images[count % images.length],
                   merchant_id: row[:merchant_id]
                 )
   end
