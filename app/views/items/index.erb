@@ -2,29 +2,38 @@
   <title>Welcome! Shop Inside</title>
   <link type="text/css" rel="stylesheet" href="../../reset.css">
   <link type="text/css" rel="stylesheet" href="../../item.css">
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h1>Little Shop of Orders</h1>
-    <h1>Items </h1>
+    <a href="/"><h1>Little Shop of Orders</h1></a>
   </header>
 
   <nav>
-    <a href="/">Little Shop Home</a>
+    <a href="/">Home</a>
+    <a href="/items-dashboard">Item Dashboard</a>
     <a href="/items/new">New Item</a>
+    <a href="/merchants">Merchants</a>
+    <a href="/categories">Categories</a>
   </nav>
 
-  <% @items.each do |item| %>
-    <img src="<%= item.image %>" alt="<%= item.title %>"/>
-    <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
-    <p>$<%= '%.2f' % item.price %></p>
+  <main>
+    <% @items.each do |item| %>
+      <figure>
 
-    <a href="/items/<%= item.id %>/edit">Edit Item</a>
+          <img src="<%= item.image %>" alt="<%= item.title %>"/>
+          <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
+          <p>$<%= '%.2f' % item.price %></p>
 
-    <form action="/items/<%= item.id %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE"/>
-      <input type="submit" value="Delete Item"/>
-    </form>
-  <% end %>
+          <div class="buttons">
+            <a href="/items/<%= item.id %>/edit"><button>Edit Item</button></a>
+            <form action="/items/<%= item.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE"/>
+              <input type="submit" value="Delete Item"/>
+            </form>
+          </div>
+      </figure>
+    <% end %>
+  </main>
 </body>

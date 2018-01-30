@@ -13,12 +13,16 @@
   Image URL:<br>
   <input type="url" name="item[image]"/><br><br>
   Merchant:<br>
-  <% @merchants.each do |merchant| %>
-    <input type="radio" name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %><br>
-  <% end %><br>
+  <select><optgroup value="Merchant">
+    <% @merchants.each do |merchant| %>
+      <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
+      <% end %>
+  </optgroup></select><br><br>
   Category:<br>
-  <% @categories.each do |category| %>
-    <input type="radio" name="item[category_id]" value="<%= category.id %>"/><%= category.name %><br>
-  <% end %><br>
+  <select><optgroup>
+    <% @categories.each do |category| %>
+      <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
+      <% end %>
+  </optgroup></select><br><br>
   <input type="submit" value="Submit"/>
 </form>
