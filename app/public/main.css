@@ -11,7 +11,11 @@ a {
 }
 
 h1 {
-  color: #ffffff;
+  color: #fff;
+}
+
+p {
+  color: #fff;
 }
 
 a:hover {
@@ -66,13 +70,13 @@ a:active {
 .dropdown .dropbutton {
   font-size: 16px;
   border: none;
-  color: #ffffff;
+  color: #fff;
   background-color: inherit;
   outline: none;
 }
 
 .dropdown-content a {
-  color: #ffffff;
+  color: #fff;
   padding: 12px 16px;
   width: 84%;
 }
@@ -153,7 +157,7 @@ a:active {
 .all-container h1 {
  display: flex;
  justify-content: center;
- color: #ffffff;
+ color: #fff;
 }
 
 .returns {
@@ -187,7 +191,7 @@ a:active {
 .return:hover .utility {
   display: block;
   width: 150px;
-  color: #ffffff;
+  color: #fff;
   background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-around;
@@ -211,10 +215,10 @@ a:active {
 }
 
 .utility input {
-  border: 1px solid #000000;
+  border: 1px solid #000;
   width: 75px;
   background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.4));
-  color: #ffffff;
+  color: #fff;
   font-size: 11pt;
   margin-bottom: 0px;
   outline: none;
@@ -337,13 +341,22 @@ a:active {
   margin-top: 5px;
 }
 
-.delete {
+#delete {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 25%;
   width: 25%;
-  
+  box-shadow: 0px 16px 32px 0px rgba(30,30,30, 0.7);
+  border: 2px solid #303030;
+  z-index: 99;
+}
+
+.label {
+  display: block;
+  background-color: red;
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 571px) {
@@ -366,7 +379,9 @@ a:active {
   }
 
   .banner {
-    display: none;
+    background-image: none;
+    display: flex;
+    justify-content: center;
   }
 
   .top {

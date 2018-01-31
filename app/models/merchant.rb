@@ -16,7 +16,6 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.highest_priced_item
-
       joins(:items)
       .order("price DESC")
       .first
@@ -24,9 +23,5 @@ class Merchant < ActiveRecord::Base
 
   def total_price_of_items
     items.sum(:price)
-  end
-
-  def highest_priced_item
-    items.order("price DESC").first
   end
 end
