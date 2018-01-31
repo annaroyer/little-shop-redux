@@ -1,6 +1,5 @@
 class LittleShopApp < Sinatra::Base
   set :method_override, true
-  enable :sessions
 
   get '/' do
     erb :dashboard
@@ -24,18 +23,11 @@ class LittleShopApp < Sinatra::Base
 
   post '/merchants' do
     Merchant.create(params[:merchant])
-
-    session[:success_message] = "Successfully created song."
-
     redirect :"merchants"
   end
 
   get '/merchants/:id' do
     @merchant = Merchant.find(params[:id])
-
-    @success_message = session[:success_message]
-    session[:success_message] = nil
-    
     erb :"merchants/show"
   end
 
@@ -46,9 +38,6 @@ class LittleShopApp < Sinatra::Base
 
   put '/merchants/:id' do |id|
     Merchant.update(id.to_i, params[:merchant])
-
-    session[:success_message] = "Successfully updated song."
-
     redirect :"merchants/#{id}"
   end
 
