@@ -19,7 +19,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants-dashboard' do
-    @merchants = Merchant.all
+    @merchants = Merchant.all 
     erb :"merchants/dashboard"
   end
 
@@ -147,5 +147,4 @@ class LittleShopApp < Sinatra::Base
     status 404
     erb :"missing"
   end
-
 end
