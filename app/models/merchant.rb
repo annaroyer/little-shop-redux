@@ -4,9 +4,11 @@ class Merchant < ActiveRecord::Base
   has_many :items
 
   def self.most_items
-    # select("merchants.*, count(items) AS count_by_merchant_id")
-      joins(:items).group(:id).order("count(items)")
-      # .last
+    select("merchants.*, count(items) AS count_by_merchant_id")
+      .joins(:items)
+      .group(:id)
+      .order("count_by_merchant_id")
+      .last
   end
 
   def total_price_of_items
