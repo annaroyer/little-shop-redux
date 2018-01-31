@@ -17,7 +17,7 @@ describe "As a user" do
     it "I can click on create a category" do
       visit '/categories'
 
-      click_on "Create A Category"
+      click_on "Create New Category"
 
       expect(current_path).to eq("/categories/new")
     end
@@ -27,7 +27,7 @@ describe "As a user" do
 
       visit '/categories'
 
-      click_on "Edit Category"
+      click_on "Edit"
 
       expect(current_path).to eq("/categories/1/edit")
     end
@@ -36,7 +36,7 @@ describe "As a user" do
       Category.create(name: "DoYoUWaNtMEtoTyPeFORyOu")
       visit '/categories'
 
-      click_on "Delete Category"
+      click_on "Delete"
 
       expect(current_path).to eq("/categories")
 
