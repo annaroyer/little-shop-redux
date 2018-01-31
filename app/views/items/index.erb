@@ -63,10 +63,10 @@
             <!-- <a href="/items/<%= item.id %>/edit"><button class="item-button">Edit</button></a> -->
 
 
-            <form method="get" action="/items/<%= item.id %>/edit">
+            <form action="/items/<%= item.id %>/edit" method="GET">
                 <button type="submit">Edit</button>
             </form>
-            
+
 
             <form action="/items/<%= item.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>

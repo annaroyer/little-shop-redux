@@ -2,6 +2,7 @@ body {
   background: linear-gradient(#232323, #303030);
   margin: 0px;
   font-family: 'Fredericka the Great', cursive;
+  color: #fff;
 }
 
 audio {
@@ -12,6 +13,10 @@ a {
   color: #fff;
   text-decoration: none;
   font: 10pt 'Josefin Slab';
+}
+
+p {
+  color: #fff;
 }
 
 h1 {

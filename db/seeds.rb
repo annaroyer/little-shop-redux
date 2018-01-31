@@ -23,23 +23,12 @@ class Seed
                   description: row[:description],
                   unit_price:  row[:unit_price],
                   image:       images[count % images.length],
-                  merchant_id: row[:merchant_id]
+                  merchant_id: row[:merchant_id],
+                  category_id: rand(1..9)
                 )
   end
 
   CSV.foreach("./db/csv/category.csv", OPTIONS) do |row|
     Category.create!(row.to_hash)
   end
-
-  # items = Item.all
-
-  # items.each do |item|
-  #   if item.price > 500
-  #     # item [category_1]
-  #   elsif item.price < 500 && item.price > 100
-  #     # item [category_2]
-  #   else
-  #     #item [category_3]
-  #   end
-    
 end

@@ -16,7 +16,7 @@ describe "As a user" do
 
       visit "merchants-dashboard"
 
-      expect(page).to have_content("Merchant With The Most Items: Dill")
+      expect(page).to have_content("Dill")
     end
 
     it "I can see the merchant with the highest priced item" do
