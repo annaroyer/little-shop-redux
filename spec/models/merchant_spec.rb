@@ -37,15 +37,15 @@ describe Merchant do
         Item.create(title: 'pickles', description: 'crunchy', unit_price: 300, image: 'pickle-jar.jpg', merchant_id: 1)
         Item.create(title: 'pickles', description: 'sour', unit_price: 400, image: 'pickle-jar.jpg', merchant_id: 1)
 
-        merchant_2 = Merchant.create(name: "Sherry")
+        Merchant.create(name: "Sherry")
         Item.create(title: "Chardonnay", description: "California", unit_price: 5000, image: 'vineyard.jpg', merchant_id: 2)
         Item.create(title: "Pinot Grigio", description: "Italy", unit_price: 4500, image: 'wine-bottle.jpg', merchant_id: 2)
 
-        merchant_3 = Merchant.create(name: "Melanie")
+        Merchant.create(name: "Melanie")
         Item.create(title: "Watermelon", description: "seedless", unit_price: 350, image: 'picnic.jpg', merchant_id: 3)
         Item.create(title: "Cantaloupe", description: "medium", unit_price: 300, image: 'cantaloupe.jpg', merchant_id: 3)
 
-        merchant_with_most_items = Merchant.most_items
+        merchant_with_most_items = Merchant.most_items.first
 
         expect(merchant_with_most_items.name).to eq(merchant_1.name)
         expect(merchant_with_most_items.id).to eq(merchant_1.id)
@@ -72,7 +72,7 @@ describe Merchant do
         expect(merchant_with_most_items.first.name).to eq(merchant_1.name)
         expect(merchant_with_most_items.last.name).to eq(merchant_2.name)
         expect(merchant_with_most_items.first.id).to eq(merchant_1.id)
-        expect(merchant_with_most_items.last.nid).to eq(merchant_1.id)
+        expect(merchant_with_most_items.last.id).to eq(merchant_2.id)
       end
     end
   end

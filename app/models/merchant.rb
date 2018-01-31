@@ -26,3 +26,4 @@ class Merchant < ActiveRecord::Base
   def self.alphabetized
     order(:name)
   end
+end

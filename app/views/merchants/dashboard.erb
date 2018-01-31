@@ -4,6 +4,7 @@
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
+
 <div class="top">
   <div class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
@@ -46,19 +47,12 @@
 </div>
 
 <h1>Merchant With The Most Items:</h1>
-<<<<<<< HEAD
- <h2><%= @merchants.most_items.name %></h2>
- <ul>
- <% @merchants.most_items.items do |item| %>
-   <li><%= item.title %></li>
-=======
-<% @with_most_items.each do |merchant| %>
-  <%= merchant.name %>
+<% @merchants.most_items.each do |merchant| %>
+  <p><%= merchant.name %></p>
  <ul>
  <% merchant.items do |item| %>
     <li><%= item.title %></li>
    <% end %>
->>>>>>> 644f862f3c9f6f9d33af4144b7e7f0c7fe411943
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>
