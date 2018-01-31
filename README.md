@@ -1,7 +1,17 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/garcia50/little-shop-redux.svg?columns=all)](https://waffle.io/garcia50/little-shop-redux)
 
 ---
-layout: page
+Welcome to the Little Shop of Orders.
+
+There are a few things you need to do to set up before you can start. Here are the steps.
+
+* Run 'git clone https://github.com/garcia50/little-shop-redux.git' from your terminal in the directory you want to clone to.
+
+* Run 'bundle install'
+
+* Run 'rake db:reset'
+
+* Run 'shotgun' and use your favorite web browser to go to localhost:9393
 ---
 
 # Little Shop Redux

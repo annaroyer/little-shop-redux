@@ -48,31 +48,25 @@
 </nav>
 
 <div class="container">
-
+  <h1>Merchant With The Most Items:</h1>
+  <% @merchants.most_items.each do |merchant| %>
+    <h2><%= merchant.name %></h2><br>
+  <% end %>
+  <h1>Merchant with the Highest Priced Item:</h1>
+  <h2><%= @merchants.highest_priced_item.name %></a></h2>
+  <table>
+    <tr>
+      <td><h2>Merchant Name</h2></td>
+      <td><h2>Total Items</h2></td>
+      <td><h2>Total Item Price</h2></td>
+    </tr>
+  <% @merchants.each do |merchant| %>
+    <tr>
+      <td><%= merchant.name %></td>
+      <td><%= merchant.items.count %></td>
+      <td>$<%= "%.2f" % merchant.total_price_of_items %></td>
+    </tr>
+  <% end %>
+  </table>
+  <a href="/merchants-dashboard"><div class="top_button">Top</div></a>
 </div>
-
-<h1>Merchant With The Most Items:</h1>
-<% @merchants.most_items.each do |merchant| %>
-  <p><%= merchant.name %></p>
- <ul>
- <% merchant.items do |item| %>
-    <li><%= item.title %></li>
-   <% end %>
-<% end %>
-</ul>
-<h1>Merchant with the Highest Priced Item:</h1>
-<h2> <%= @merchants.highest_priced_item.name %></h2>
-<table>
-  <tr>
-    <td><h2>Merchant Name</h2></td>
-    <td><h2>Total Items</h2></td>
-    <td><h2>Total Price of Items</h2></td>
-  </tr>
-<% @merchants.each do |merchant| %>
-  <tr>
-    <td><%= merchant.name %></td>
-    <td><%= merchant.items.count %></td>
-    <td>$<%= "%.2f" % merchant.total_price_of_items %></td>
-  </tr>
-<% end %>
-</table>

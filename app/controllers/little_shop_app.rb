@@ -7,7 +7,11 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants' do
     @merchants = Merchant.where("name LIKE ?", "%#{params[:name]}%")
-    erb :"merchants/index"
+    if @merchants.empty?
+      erb :"missing"
+    else
+      erb :"merchants/index"
+    end
   end
 
   get '/merchants/new' do
@@ -46,7 +50,11 @@ class LittleShopApp < Sinatra::Base
 
   get '/categories' do
     @categories = Category.where("name LIKE ?", "%#{params[:name]}%")
-    erb :"categories/index"
+    if @categories.empty?
+      erb :"missing"
+    else
+      erb :"categories/index"
+    end
   end
 
   get '/categories/new' do
@@ -90,7 +98,11 @@ class LittleShopApp < Sinatra::Base
 
   get '/items' do
     @items = Item.where("title LIKE ?", "%#{params[:title]}%")
-    erb :"items/index"
+    if @items.empty?
+      erb :"missing"
+    else
+      erb :"items/index"
+    end
   end
 
   get '/items/new' do

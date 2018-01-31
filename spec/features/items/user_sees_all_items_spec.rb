@@ -24,6 +24,7 @@ describe "As a user" do
       visit "/items"
 
       first(:button, "Edit").click
+       # click_on "Edit"
 
       expect(current_path).to eq("/items/1/edit")
     end
