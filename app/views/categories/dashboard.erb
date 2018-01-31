@@ -1,17 +1,19 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 
-<div class="top">
-  <div class="banner">
+<header class="top">
+  <figure class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
-  </div>
-</div>
-<div class="nav">
-  <div class="dropdown">
+  </figure>
+</header>
+
+<nav class="nav">
+  <section class="dropdown">
     <a href="/merchants"><button class="dropbutton">Merchants</button></a>
     <div class="dropdown-content">
       <a href="/merchants-dashboard">Merchants Dashboard</a>
@@ -20,8 +22,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/categories"><button class="dropbutton">Categories</button></a>
     <div class="dropdown-content">
       <a href="/categories-dashboard">Categories Dashboard</a>
@@ -30,8 +33,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/items"><button class="dropbutton">Items</button></a>
     <div class="dropdown-content">
       <a href="/items-dashboard">Items Dashboard</a>
@@ -40,16 +44,12 @@
         <input class="find" type="text" name="title" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-</div>
+  </section>
+</nav>
 
-<h1 class="ap_header">Categories</h1>
-
-<div class="cat">
-  <h3 class="ap_me">Category with Most Expensive Item: <%= @categories.most_expensive_item.name %></h3>
-  <h3 class="ap_le">Category with Least Expensive Item: <%= @categories.least_expensive_item.name %></h3>
-</div>
-<h1>Categories </h1>
+<h1 class="page-title">Categories </h1>
+<h1 class="page-title">Category with Most Expensive Item: <%= @categories.most_expensive_item.name %></h1>
+<h1 class="page-title">Category with Least Expensive Item: <%= @categories.least_expensive_item.name %></h1>
 
 <% @categories.each do |category| %>
   <h5>Category: <%= category.name %>, Average Price: $<%= '%.2f' % category.average_item_price %></h5>
