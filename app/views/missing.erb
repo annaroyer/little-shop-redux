@@ -2,6 +2,7 @@
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 <div class="top">
   <div class="banner">
@@ -40,20 +41,3 @@
     </div>
   </div>
 </div>
-<a href="/">Little Shop Home</a>
-
-<h1>Items</h1>
-<a href="/items/new">New Item</a></br></br>
-
-<% @items.each do |item| %>
-  <img src="<%= item.image %>" alt="<%= item.title %>"/>
-  <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
-  <p>$<%= '%.2f' % item.price %></p>
-
-  <a href="/items/<%= item.id %>/edit">Edit Item</a>
-
-  <form action="/items/<%= item.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE"/>
-    <input type="submit" value="Delete Item"/>
-  </form>
-<% end %>

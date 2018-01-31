@@ -1,11 +1,58 @@
-<a href="/merchants">All Merchants</a>
-<a href="/">Home</a>
+<head>
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../../../reset.css"> -->
+  <title>Don't Enter : Shop Inside</title>
+  <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
+</head>
+<div class="top">
+  <div class="banner">
+    <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
+  </div>
+</div>
+<div class="nav">
+  <div class="dropdown">
+    <a href="/merchants"><button class="dropbutton">Merchants</button></a>
+    <div class="dropdown-content">
+      <a href="/merchants-dashboard">Merchants Dashboard</a>
+      <a href="/merchants/new">Create New Merchant</a>
+      <form action="/merchants?:params" method="GET">
+        <input class="find" type="text" name="name" placeholder="Find by Name...">
+      </form>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="/categories"><button class="dropbutton">Categories</button></a>
+    <div class="dropdown-content">
+      <a href="/categories-dashboard">Categories Dashboard</a>
+      <a href="/categories/new">Create New Category</a>
+      <form action="/categories?:params" method="GET">
+        <input class="find" type="text" name="name" placeholder="Find by Name...">
+      </form>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="/items"><button class="dropbutton">Items</button></a>
+    <div class="dropdown-content">
+      <a href="/items-dashboard">Items Dashboard</a>
+      <a href="/items/new">Create New Item</a>
+      <form action="/items?:params" method="GET">
+        <input class="find" type="text" name="title" placeholder="Find by Name...">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  
+</div>
 
 <h1>Merchant With The Most Items:</h1>
- <h2><%= @with_most_items.name %></h2>
+<% @with_most_items.each do |merchant| %>
+  <%= merchant.name %>
  <ul>
- <% @with_most_items.items do |item| %>
-   <li><%= item.title %></li>
+ <% merchant.items do |item| %>
+    <li><%= item.title %></li>
+   <% end %>
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>
