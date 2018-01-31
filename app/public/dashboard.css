@@ -15,19 +15,18 @@ a:active {
   color: #c8474e;
 }
 
-a {
+.link {
   display: flex;
   justify-content: flex-end;
   color: #ffffff;
   flex-direction: column-reverse;
-  text-decoration: none;
+  /* text-decoration: none; */
   border: 1px dashed #540b06;
   border-width: 0 0 1 0;
   padding: 2px;
   background: linear-gradient(rgba(81,6,11,0.3), rgba(0,0,0,0.9));
   font-family: 'Josefin Slab';
   letter-spacing: 3px;
-  text-transform: lowercase;
 }
 
 div {
@@ -43,6 +42,8 @@ audio {
 .links {
   display: flex;
   flex-direction: column-reverse;
+  margin-top: 43%;
+  margin-left: 59%;
 }
 
 @media screen and (max-width: 1091px) {
