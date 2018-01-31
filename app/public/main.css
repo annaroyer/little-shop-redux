@@ -193,13 +193,11 @@ a:active {
 
 .utility:hover {
   background: rgba(0,0,0,0.7);
-  transition: all 6s ease;
 }
 
 .return:hover .utility {
   display: block;
   width: 150px;
-  color: #fff;
   background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: space-around;
