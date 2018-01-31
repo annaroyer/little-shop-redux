@@ -4,10 +4,10 @@ class Merchant < ActiveRecord::Base
   has_many :items
 
   def self.most_items
-    where("items_count >= ?", set_most_items_count)
+    where("items_count >= ?", set_highest_item_count)
   end
 
-  def self.set_most_items_count
+  def self.set_highest_item_count
     select("merchants.*, count(items) AS count_by_merchant_id")
       .joins(:items)
       .group(:id)
