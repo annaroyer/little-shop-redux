@@ -370,13 +370,18 @@ a:active {
   align-items: center;
 }
 
-.single-item {
+.single-item, .special-item {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
   max-width: 200px;
   margin: 50px;
+}
+
+.special-item {
+  max-width: 250px;
+  justify-content: space-between;
 }
 
 .item-title {

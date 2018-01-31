@@ -49,20 +49,20 @@
 
 <h1 class="page-title">Items Info</h1>
 
-<h2>Total Items: <%= @items.count %></h2>
-<h2>Average Price Per Item:<br> <%= @items.average_price %></h2>
+<p>Total Items: <%= @items.count %></p>
+<p>Average Price Per Item:<br> <%= @items.average_price %></p>
 <section class="items">
-  <figure class="single-item">
-    <h2>Most Recently Created Item:</h2>
-    <h2><%= @items.most_recently_created.title %></h2>
+  <figure class="special-item">
+    <p>Most Recently Created Item:</p>
+    <p><%= @items.most_recently_created.title %></p>
     <img class="item-image" src="<%= @items.most_recently_created.image %>" alt="<%= @items.most_recently_created.title %>">
-    <h2>$<%= "%.2f" % @items.most_recently_created.price %></h2>
-    <h2>Created <%= @items.most_recently_created.created_at %></h2>
+    <p>$<%= "%.2f" % @items.most_recently_created.price %></p>
+    <p>Created <%= @items.most_recently_created.created_at %></p>
   </figure>
   <figure class="single-item">
-    <h2>Oldest Item: <%= @items.oldest.title %></h2>
+    <p>Oldest Item: <%= @items.oldest.title %></p>
     <img class="item-image" src="<%= @items.oldest.image %>" alt="<%= @items.oldest.title %>">
-    <h2>$<%= @items.oldest.price %></h5>
-    <h2>Created <%= @items.oldest.created_at %></h2>
+    <p>$<%= @items.oldest.price %></h5>
+    <p>Created <%= @items.oldest.created_at %></p>
   </figure>
 </section>
