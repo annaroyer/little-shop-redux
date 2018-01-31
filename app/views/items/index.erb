@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <head>
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <link rel="stylesheet" type="text/css" href="../../../reset.css">
@@ -55,9 +55,7 @@
     <% @items.each do |item| %>
       <figure class="single-item">
           <a href="/items/<%= item.id %>"><img class="item-image" src="<%= item.image %>" alt="<%= item.title %>"/></a>
-          <figcaption class="item-title">
-            <a href="/items/<%= item.id %>"><h2><%= item.title %></h2></a>
-          </figcaption>
+            <a href="/items/<%= item.id %>"><h2 class="item-title"><%= item.title %></h2></a>
           <p class="item-price">$<%= '%.2f' % item.price %></p>
           <figcaption class="item-buttons">
             <!-- <a href="/items/<%= item.id %>/edit"><button class="item-button">Edit</button></a> -->

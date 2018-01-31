@@ -12,7 +12,10 @@ describe "As a user" do
     end
 
     it "I can click on new merchant" do
+      Merchant.create(name: "Opakawagalaga")
+
       visit "/merchants"
+
       click_on "New Merchant"
 
       expect(current_path).to eq("/merchants/new")
@@ -32,10 +35,12 @@ describe "As a user" do
 
     it "I can click on delete a merchant" do
       Merchant.create(name: "Opakawagalaga Epunifahorious")
+      Merchant.create(name: "Opakawagalaga")
+
 
       visit "/merchants"
 
-      within(".utility") do
+      within first(".utility") do
         first(:button, "Delete").click
       end
 

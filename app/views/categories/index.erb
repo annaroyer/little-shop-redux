@@ -1,17 +1,19 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../category.css">
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 
-<div class="top">
-  <div class="banner">
+<header class="top">
+  <figure class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
-  </div>
-</div>
-<div class="nav">
-  <div class="dropdown">
+  </figure>
+</header>
+
+<nav class="nav">
+  <section class="dropdown">
     <a href="/merchants"><button class="dropbutton">Merchants</button></a>
     <div class="dropdown-content">
       <a href="/merchants-dashboard">Merchants Dashboard</a>
@@ -20,8 +22,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/categories"><button class="dropbutton">Categories</button></a>
     <div class="dropdown-content">
       <a href="/categories-dashboard">Categories Dashboard</a>
@@ -30,8 +33,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/items"><button class="dropbutton">Items</button></a>
     <div class="dropdown-content">
       <a href="/items-dashboard">Items Dashboard</a>
@@ -40,30 +44,20 @@
         <input class="find" type="text" name="title" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-</div>
+  </section>
+</nav>
 
-<div class="container">
-  <div class="all-container">
-    <h1>Categories</h1>
-    <div class="categories">
-    <% @categories.each do |category| %>
-      <div class="category">
-        <div class="category_link">
-          <a href="/categories/<%= category.id %>"><p><%= category.name %></p></a>
-        </div>
-        <div class="utility">
-          <form action="/categories/<%= category.id %>/edit" method="GET">
-            <input type="submit" value="Edit"/>
-          </form>
-          <form action="/categories/<%= category.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE"/>
-            <input type="submit" value="Delete"/>
-          </form>
-        </div>
-      </div>
-    <% end %>
-    </div>
-  </div>
-  <a href="/merchants"><div class="top_button">Top</div></a>
-</div>
+<h1>Categories</h1>
+
+<summary>
+<a href="/categories/new">Create A Category</a>
+</summary>
+<br>
+<% @categories.each do |category| %>
+  <a href="/categories/<%= category.id %>"><h2><%= category.name %></h2></a>
+  <a href="/categories/<%= category.id %>/edit">Edit Category</a>
+  <form action="/categories/<%= category.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Category">
+  </form>
+<% end %>

@@ -1,4 +1,4 @@
-describe "As a user" do 
+describe "As a user" do
   describe "when I vist the category index page" do
     it "I can see all categories" do
       Category.create(name: "Doyouwantmetotypeforyou")
@@ -15,6 +15,8 @@ describe "As a user" do
     end
 
     it "I can click on create a category" do
+      Category.create(name: "Doyouwantmetotypeforyou")
+
       visit '/categories'
 
       click_on "Create New Category"
@@ -34,21 +36,22 @@ describe "As a user" do
 
     it "I can click on delete a category" do
       Category.create(name: "DoYoUWaNtMEtoTyPeFORyOu")
+      Category.create(name: "Doyouwantmetotypeforyou")
+
       visit '/categories'
 
-      click_on "Delete"
+      first(:button, "Delete").click
 
       expect(current_path).to eq("/categories")
-
     end
 
     it "I see one category" do
       category = Category.create(name: "Doyouwantmetotypeforyou")
-    
+
       visit "/categories"
-      
+
       click_on "Doyouwantmetotypeforyou"
-      
+
       visit "/categories/#{category.id}"
 
       expect(page).to have_content("Doyouwantmetotypeforyou")

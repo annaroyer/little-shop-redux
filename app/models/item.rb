@@ -3,7 +3,6 @@ class Item < ActiveRecord::Base
   belongs_to :merchant, counter_cache: true
   belongs_to :category
 
-
   def price
     (unit_price / 100).to_f.round(2)
   end

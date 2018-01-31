@@ -1,16 +1,19 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
-<div class="top">
-  <div class="banner">
+
+<header class="top">
+  <figure class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
-  </div>
-</div>
-<div class="nav">
-  <div class="dropdown">
+  </figure>
+</header>
+
+<nav class="nav">
+  <section class="dropdown">
     <a href="/merchants"><button class="dropbutton">Merchants</button></a>
     <div class="dropdown-content">
       <a href="/merchants-dashboard">Merchants Dashboard</a>
@@ -19,8 +22,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/categories"><button class="dropbutton">Categories</button></a>
     <div class="dropdown-content">
       <a href="/categories-dashboard">Categories Dashboard</a>
@@ -29,8 +33,9 @@
         <input class="find" type="text" name="name" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-  <div class="dropdown">
+  </section>
+
+  <section class="dropdown">
     <a href="/items"><button class="dropbutton">Items</button></a>
     <div class="dropdown-content">
       <a href="/items-dashboard">Items Dashboard</a>
@@ -39,33 +44,35 @@
         <input class="find" type="text" name="title" placeholder="Find by Name...">
       </form>
     </div>
-  </div>
-</div>
-<a href="/">Little Shop Home</a>
-<a href="/items">Items</a>
+  </section>
+</nav>
 
-<h1>New Item</h1>
-
-<form action="/items" method="POST">
-  Title:<br>
-  <input type="text" name="item[title]"/><br><br>
-  Description:<br>
-  <textarea name="item[description]"></textarea><br><br>
-  Price:<br>
-  $<input type="number" step="0.01" name="item[unit_price]"/><br><br>
-  Image URL:<br>
-  <input type="url" name="item[image]"/><br><br>
-  Merchant:<br>
-  <select><optgroup value="Merchant">
-    <% @merchants.each do |merchant| %>
-      <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
-      <% end %>
-  </optgroup></select><br><br>
-  Category:<br>
-  <select><optgroup>
-    <% @categories.each do |category| %>
-      <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
-      <% end %>
-  </optgroup></select><br><br>
-  <input type="submit" value="Submit"/>
-</form>
+<h1 class="page-title">New Item</h1>
+<main class="item-form">
+  <form action="/items" method="POST">
+    <p>Title:</p><br>
+    <input type="text" name="item[title]"/><br><br>
+    <p>Description:</p><br>
+    <textarea name="item[description]"></textarea><br><br>
+    <p>Price:<br></p>
+    <figure class="price-input">
+      <p>$</p>
+      <input type="number" step="0.01" name="item[unit_price]"/><br><br>
+    </figure>
+    <p>Image URL:<br></p>
+    <input type="url" name="item[image]"/><br><br>
+    <p>Merchant:<br></p>
+    <select><optgroup value="Merchant">
+      <% @merchants.each do |merchant| %>
+        <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
+        <% end %>
+    </optgroup></select><br><br>
+    <p>Category:<br></p>
+    <select><optgroup>
+      <% @categories.each do |category| %>
+        <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
+        <% end %>
+    </optgroup></select><br><br>
+    <input type="submit" value="Submit"/>
+  </form>
+</main>
