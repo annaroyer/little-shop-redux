@@ -60,8 +60,6 @@
           </figcaption>
           <p class="item-price">$<%= '%.2f' % item.price %></p>
           <figcaption class="item-buttons">
-            <!-- <a href="/items/<%= item.id %>/edit"><button class="item-button">Edit</button></a> -->
-
 
             <form action="/items/<%= item.id %>/edit" method="GET">
                 <button type="submit">Edit</button>
