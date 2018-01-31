@@ -31,14 +31,15 @@ a:active {
   background: linear-gradient(#303030, #000);
   height: 45px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: sticky;
+  margin-top: 0px;
 }
 
 .dropdown {
   min-width: 206px;
-  margin: 200px;
+  /* margin: 200px; */
 }
 
 .dropdown:hover {
