@@ -130,4 +130,10 @@ class LittleShopApp < Sinatra::Base
     item = Item.find(id)
     item.to_json
   end
+
+  not_found do
+    status 404
+    erb :"missing"
+  end
+
 end

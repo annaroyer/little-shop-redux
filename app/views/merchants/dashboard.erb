@@ -41,12 +41,24 @@
     </div>
   </div>
 </div>
+<div class="container">
+
+</div>
 
 <h1>Merchant With The Most Items:</h1>
+<<<<<<< HEAD
  <h2><%= @merchants.most_items.name %></h2>
  <ul>
  <% @merchants.most_items.items do |item| %>
    <li><%= item.title %></li>
+=======
+<% @with_most_items.each do |merchant| %>
+  <%= merchant.name %>
+ <ul>
+ <% merchant.items do |item| %>
+    <li><%= item.title %></li>
+   <% end %>
+>>>>>>> 644f862f3c9f6f9d33af4144b7e7f0c7fe411943
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>

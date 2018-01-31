@@ -4,11 +4,15 @@ class Merchant < ActiveRecord::Base
   has_many :items
 
   def self.most_items
+    where("items_count >= ?", set_highest_item_count)
+  end
+
+  def self.set_highest_item_count
     select("merchants.*, count(items) AS count_by_merchant_id")
       .joins(:items)
       .group(:id)
       .order("count_by_merchant_id")
-      .last
+      .last.count_by_merchant_id
   end
 
   def total_price_of_items
@@ -22,4 +26,3 @@ class Merchant < ActiveRecord::Base
   def self.alphabetized
     order(:name)
   end
-end
