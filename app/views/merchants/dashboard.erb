@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../../../main.css">
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
@@ -41,12 +42,45 @@
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="featured-container">
+    Merchant With The Highest Item Price
+    Merchant With The Most Items
+    <div class="featured-returns">
+      <div class="featured-container">
+
+      </div>
+    </div>
+  </div>
+  <div class="all-container">
+    <div class="returns">
+    <% @merchants.each do |merchant| %>
+      <div class="return">
+        <div class="return_link">
+          <a href="/merchants/<%= merchant.id %>"><p><%= merchant.name %></p></a>
+        </div>
+        <div class="utility">
+          <form action="/merchants/<%= merchant.id %>/edit" method="GET">
+            <input type="submit" value="Edit"/>
+          </form>
+          <form action="/merchants/<%= merchant.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="Delete"/>
+          </form>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
 
 <h1>Merchant With The Most Items:</h1>
- <h2><%= @with_most_items.name %></h2>
+<% @with_most_items.each do |merchant| %>
+  <%= merchant.name %>
  <ul>
- <% @with_most_items.items do |item| %>
-   <li><%= item.title %></li>
+ <% merchant.items do |item| %>
+    <li><%= item.title %></li>
+   <% end %>
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>

@@ -1,7 +1,7 @@
 class Item < ActiveRecord::Base
   validates_presence_of :title, :description, :price, :image
   before_validation :set_price
-  belongs_to :merchant
+  belongs_to :merchant, counter_cache: true
   belongs_to :category
 
   def set_price

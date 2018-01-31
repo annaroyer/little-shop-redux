@@ -137,6 +137,14 @@ a:active {
   width: 35%
 }
 
+.featured-returns {
+
+}
+
+.featured-return {
+
+}
+
 .all-container {
   background: inherit;
   width: 83%;
@@ -327,6 +335,15 @@ a:active {
   transition: all 502ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
   outline: none;
   margin-top: 5px;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+  width: 25%;
+  
 }
 
 @media screen and (max-width: 571px) {
