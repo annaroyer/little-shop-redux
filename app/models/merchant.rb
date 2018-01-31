@@ -4,10 +4,10 @@ class Merchant < ActiveRecord::Base
   has_many :items
 
   def self.most_items
-    where("items_count >= ?", set_most_items_count)
+    where("items_count >= ?", set_highest_item_count)
   end
 
-  def self.set_most_items_count
+  def self.set_highest_item_count
     select("merchants.*, count(items) AS count_by_merchant_id")
       .joins(:items)
       .group(:id)
@@ -15,13 +15,15 @@ class Merchant < ActiveRecord::Base
       .last.count_by_merchant_id
   end
 
-  def self.highest_priced_item
-      joins(:items)
-      .order("price DESC")
-      .first
+  def total_price_of_items
+    items.total_price
   end
 
-  def total_price_of_items
-    items.sum(:price)
+  def self.highest_priced_item
+    joins(:items).order("unit_price").last
+  end
+
+  def self.alphabetized
+    order(:name)
   end
 end
