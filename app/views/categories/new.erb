@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../category.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
@@ -42,9 +42,16 @@
     </div>
   </div>
 </div>
-<h1>Create A New Category</h1>
-<form action="/categories" method="POST">
-  <label>.   .</label>
-  <input type="text" name="category[name]" placeholder="Category Name">
-  <input type="submit" value="Submit">
-</form>
+<div class="container">
+  <h1>Create New Category</h1>
+  <div class="create-container">
+    <div class="side"></div>
+    <div class="create">
+      <form action="/categories" method="POST">
+        <input type="text" name="category[name]" placeholder="Enter Name..."><br>
+        <input type="submit" value="Create">
+      </form>
+    </div>
+  </div>
+  <br><center><a href="/categories">Return to Merchant Index</a></center>
+</div>

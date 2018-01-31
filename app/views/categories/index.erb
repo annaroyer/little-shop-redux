@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../category.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
@@ -42,14 +42,13 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="all-container">
-    <h1>Categories</h1>
-    <div class="categories">
+    <h1>You've found the categories?</h1>
+    <div class="returns">
     <% @categories.each do |category| %>
-      <div class="category">
-        <div class="category_link">
+      <div class="return">
+        <div class="return_link">
           <a href="/categories/<%= category.id %>"><p><%= category.name %></p></a>
         </div>
         <div class="utility">
@@ -65,5 +64,5 @@
     <% end %>
     </div>
   </div>
-  <a href="/merchants"><div class="top_button">Top</div></a>
+  <a href="/categories"><div class="top_button">Top</div></a>
 </div>

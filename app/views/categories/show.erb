@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../category.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
@@ -42,8 +42,24 @@
     </div>
   </div>
 </div>
-<h1>Category</h1>
-
-<ul>
-  <li> <%= @category.name %> </li>
-</ul>
+<div class="container">
+  <div class="all-container">
+    <h1>You found them. Now stop clowning around.</h1>
+    <div class="returns">
+      <div class="return">
+        <div class="return_link">
+          <a href="/categories/<%= @category.id %>"><p><%= @category.name %></p></a>
+        </div>
+        <div class="utility">
+          <form action="/categories/<%= @category.id %>/edit" method="GET">
+            <input type="submit" value="Edit"/>
+          </form>
+          <form action="/categories/<%= @category.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="Delete"/>
+          </form>
+      </div>
+    </div>
+  </div>
+  <center><a href="/categories">Return to Category Index</a></center>
+</div>

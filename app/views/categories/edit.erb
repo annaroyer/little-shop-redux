@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../category.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
@@ -42,11 +42,14 @@
     </div>
   </div>
 </div>
-<h1>Edit Category</h1>
-
-<form action="/categories/<%= @category.id %>" method="POST">
-  <input type="hidden" name="_method" value="PUT"/>
-  <label>Name</label>
-  <input type="text" name="category[name]" value="<%= @category.name %>"/>
-  <input type="submit" value="Submit"/>
-</form>
+<div class="container">
+  <h1>Edit Category</h1>
+  <div class="return">
+    <center><form action="/categories/<%= @category.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT"/>
+      <input class="form" type="text" name="category[name]" placeholder="<%= @category.name %>"/>
+      <input class="submit-button" type="submit" value="Edit"/>
+    </form></center>
+  </div>
+  <center><a href="/categories">Return to Category Index</a></center>
+</div>
