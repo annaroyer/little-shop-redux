@@ -148,13 +148,13 @@ a:active {
  color: #ffffff;
 }
 
-.merchants {
+.returns {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.merchant {
+.return {
   height: 150px;
   width: 150px;
   margin: 40px;
@@ -176,7 +176,7 @@ a:active {
   transition: all 6s ease;
 }
 
-.merchant:hover .utility {
+.return:hover .utility {
   display: block;
   width: 150px;
   color: #ffffff;
@@ -185,16 +185,16 @@ a:active {
   justify-content: space-around;
 }
 
-.merchant:hover .merchant a {
+.return:hover .merchant a {
   margin-top: 50px;
 }
 
-.merchant_link {
+.return_link {
  display: flex;
  align-items: center;
 }
 
-.merchant_link a {
+.return_link a {
   width: 150px;
   height: 115px;
   display: flex;

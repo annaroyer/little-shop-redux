@@ -43,7 +43,7 @@
 </div>
 <div class="container">
   <h1>Edit Merchant</h1>
-  <div class="merchant">
+  <div class="return">
       <center><form action="/merchants/<%= @merchant.id %>" method="POST">
         <input type="hidden" name="_method" value="PUT"/>
         <input class="form" type="text" name="merchant[name]" placeholder="<%= @merchant.name %>"/>
