@@ -21,12 +21,13 @@ a {
   color: #ffffff;
   flex-direction: column-reverse;
   text-decoration: none;
-  border-color: #540b06;
-  border-width: 0;
-  border-bottom-width: 1;
-  border-style: dashed;
+  border: 1px dashed #540b06;
+  border-width: 0 0 1 0;
   padding: 2px;
-  background: linear-gradient(rgba(81,6,11,0.3), rgba(0,0,0,0.9))
+  background: linear-gradient(rgba(81,6,11,0.3), rgba(0,0,0,0.9));
+  font-family: 'Josefin Slab';
+  letter-spacing: 3px;
+  text-transform: lowercase;
 }
 
 div {

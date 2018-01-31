@@ -15,13 +15,15 @@ class Merchant < ActiveRecord::Base
       .last.count_by_merchant_id
   end
 
-  def self.highest_priced_item
-      joins(:items)
-      .order("price DESC")
-      .first
+  def total_price_of_items
+    items.total_price
   end
 
-  def total_price_of_items
-    items.sum(:price)
+  def self.highest_priced_item
+    joins(:items).order("unit_price").last
+  end
+
+  def self.alphabetized
+    order(:name)
   end
 end

@@ -12,7 +12,7 @@ describe Item do
       expect(item).to be_invalid
     end
 
-    it "is invalid without a price" do
+    it "is invalid without a unit price" do
       item = Item.create(title: "puppy", description: "soft and fluffy", image: "http://tinypuppy.png")
 
       expect(item).to be_invalid
@@ -37,13 +37,13 @@ describe Item do
 
   describe "Class Methods" do
 
-    describe ".average_item_price" do
+    describe ".average_price" do
       it "returns average price per item" do
         Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
         Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
         Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
 
-        expect(Item.average_item_price).to eq(110.00)
+        expect(Item.average_price).to eq(110.00)
       end
     end
   end
