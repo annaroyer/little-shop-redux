@@ -5,7 +5,7 @@ describe "As a user" do
 
       visit "categories"
 
-      click_on "Edit Category"
+      click_on "Edit"
       
       expect(current_path).to eq("/categories/1/edit")
 

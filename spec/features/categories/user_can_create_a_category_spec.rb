@@ -3,7 +3,7 @@ describe "As a user" do
     it "I can create a new category" do
       visit '/categories'
 
-      click_on "Create A Category"
+      click_on "Create New Category"
 
       expect(current_path).to eq("/categories/new")
 

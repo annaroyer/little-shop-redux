@@ -1,4 +1,4 @@
-describe "As a user" do
+  describe "As a user" do
   describe "When I visit '/categories-dashboard'" do
     it "I can see the average price of item by category" do
       category_1 = Category.create(name: "clothing")

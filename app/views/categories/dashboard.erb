@@ -45,8 +45,8 @@
 <h1 class="ap_header">Categories</h1>
 
 <div class="cat">
-  <h3 class="ap_me">Category with Most Expensive Item: <%= Category.most_expensive_item %></h3>
-  <h3 class="ap_le">Category with Least Expensive Item: <%= Category.least_expensive_item %></h3>
+  <h3 class="ap_me">Category with Most Expensive Item: <%= @categories.most_expensive_item.name %></h3>
+  <h3 class="ap_le">Category with Least Expensive Item: <%= @categories.least_expensive_item.name %></h3>
 </div>  
 
 <% @categories.each do |category| %>
