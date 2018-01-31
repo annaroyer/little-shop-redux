@@ -1,4 +1,5 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -46,10 +47,9 @@
   </section>
 </nav>
 
-<a href="/">Little Shop Home</a>
-<a href="/items">Items</a>
-
-<h1><%= @item.title %></h1>
-<img src="<%= @item.image %>" alt="<%= @item.title %>">
-<h2>$<%= '%.2f' % @item.price %></h2>
-<h3><%= @item.description %></h3>
+<main class="container">
+  <h1 class="page-title"><%= @item.title %></h1>
+  <img src="<%= @item.image %>" alt="<%= @item.title %>">
+  <p>$<%= '%.2f' % @item.price %></p>
+  <p><%= @item.description %></p>
+</main>

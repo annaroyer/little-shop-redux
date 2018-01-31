@@ -1,4 +1,5 @@
 <head>
+  <link rel="stylesheet" type="text/css" href="../../../reset.css">
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
@@ -46,31 +47,32 @@
   </section>
 </nav>
 
-<a href="/">Little Shop Home</a>
-<a href="/items">Items</a>
-
-<h1>New Item</h1>
-
-<form action="/items" method="POST">
-  Title:<br>
-  <input type="text" name="item[title]"/><br><br>
-  Description:<br>
-  <textarea name="item[description]"></textarea><br><br>
-  Price:<br>
-  $<input type="number" step="0.01" name="item[unit_price]"/><br><br>
-  Image URL:<br>
-  <input type="url" name="item[image]"/><br><br>
-  Merchant:<br>
-  <select><optgroup value="Merchant">
-    <% @merchants.each do |merchant| %>
-      <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
-      <% end %>
-  </optgroup></select><br><br>
-  Category:<br>
-  <select><optgroup>
-    <% @categories.each do |category| %>
-      <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
-      <% end %>
-  </optgroup></select><br><br>
-  <input type="submit" value="Submit"/>
-</form>
+<h1 class="page-title">New Item</h1>
+<main class="item-form">
+  <form action="/items" method="POST">
+    <p>Title:</p><br>
+    <input type="text" name="item[title]"/><br><br>
+    <p>Description:</p><br>
+    <textarea name="item[description]"></textarea><br><br>
+    <p>Price:<br></p>
+    <figure class="price-input">
+      <p>$</p>
+      <input type="number" step="0.01" name="item[unit_price]"/><br><br>
+    </figure>
+    <p>Image URL:<br></p>
+    <input type="url" name="item[image]"/><br><br>
+    <p>Merchant:<br></p>
+    <select><optgroup value="Merchant">
+      <% @merchants.each do |merchant| %>
+        <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
+        <% end %>
+    </optgroup></select><br><br>
+    <p>Category:<br></p>
+    <select><optgroup>
+      <% @categories.each do |category| %>
+        <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
+        <% end %>
+    </optgroup></select><br><br>
+    <input type="submit" value="Submit"/>
+  </form>
+</main>
