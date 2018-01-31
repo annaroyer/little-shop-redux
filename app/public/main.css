@@ -4,17 +4,13 @@ body {
   font-family: 'Fredericka the Great', cursive;
 }
 
-a {
+a, p {
   color: #fff;
   text-decoration: none;
-  font-size: 10pt;
+  font: 10pt 'Josefin Slab';
 }
 
 h1 {
-  color: #fff;
-}
-
-p {
   color: #fff;
 }
 
@@ -68,11 +64,13 @@ a:active {
 }
 
 .dropdown .dropbutton {
-  font-size: 16px;
-  border: none;
   color: #fff;
+  font-size: 17px;
+  font-family: "Josefin Slab";
+  border: none;
   background-color: inherit;
   outline: none;
+  margin: 13px;
 }
 
 .dropdown-content a {
@@ -139,14 +137,6 @@ a:active {
 .featured-container {
   background-color: whitesmoke;
   width: 35%
-}
-
-.featured-returns {
-
-}
-
-.featured-return {
-
 }
 
 .all-container {
@@ -341,22 +331,62 @@ a:active {
   margin-top: 5px;
 }
 
-#delete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 25%;
-  width: 25%;
-  box-shadow: 0px 16px 32px 0px rgba(30,30,30, 0.7);
-  border: 2px solid #303030;
-  z-index: 99;
+.container-main {
+  margin: 0px 75px;
 }
 
-.label {
-  display: block;
-  background-color: red;
-  width: 100px;
-  height: 100px;
+.page-title {
+  text-align: center;
+  color: white;
+  font-family: 'Fredericka the Great';
+  font-size: 55px;
+  margin: 20px;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 200px;
+  margin: 50px;
+}
+
+.item-title {
+  text-align: center;
+  white-space: nowrap;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px;
+}
+
+.item-buttons {
+  display: flex;
+  margin: 5px;
+}
+
+.item-button {
+  background-color: black;
+  color: white;
+  font: 15px 'Josefin Slab';
+  margin: 10px;
+  padding: 10px;
+  border-style: outset;
+}
+
+.item-image {
+  width: 200px;
+  height: 225px;
+  margin: 10px;
+  border:  5px outset grey;
 }
 
 @media screen and (max-width: 571px) {

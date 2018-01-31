@@ -2,6 +2,7 @@
   <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 <div class="top">
   <div class="banner">
@@ -52,8 +53,20 @@
   Description:<br>
   <textarea name="item[description]"><%= @item.description %></textarea><br><br>
   Price:<br>
-  <input type="number" name="item[unit_price]" value="<%= @item.price %>"/><br><br>
+  <input type="number" name="item[unit_price]" value="<%= '%.2f' % @item.price %>"/><br><br>
   Image URL:<br>
   <input type="text" name="item[image]" value="<%= @item.image %>"/><br><br>
+  Merchant:
+  <select><optgroup value="<%= @item.merchant %>">
+    <% @merchants.each do |merchant| %>
+      <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
+      <% end %>
+  </optgroup></select><br><br>
+  Category:<br>
+  <select><optgroup value="<%= @item.category %>">
+    <% @categories.each do |category| %>
+      <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
+      <% end %>
+  </optgroup></select><br><br>
   <input type="submit" value="Submit"/>
 </form>

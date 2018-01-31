@@ -1,10 +1,10 @@
 <head>
   <link rel="stylesheet" type="text/css" href="../../../main.css">
-  <!-- <link rel="stylesheet" type="text/css" href="../../../reset.css"> -->
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
+
 <div class="top">
   <div class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
@@ -43,12 +43,12 @@
   </div>
 </div>
 <div class="container">
-  
+
 </div>
 
 <h1>Merchant With The Most Items:</h1>
-<% @with_most_items.each do |merchant| %>
-  <%= merchant.name %>
+<% @merchants.most_items.each do |merchant| %>
+  <p><%= merchant.name %></p>
  <ul>
  <% merchant.items do |item| %>
     <li><%= item.title %></li>
@@ -56,7 +56,7 @@
 <% end %>
 </ul>
 <h1>Merchant with the Highest Priced Item:</h1>
-<h2> <%= @with_highest_price.name %></h2>
+<h2> <%= @merchants.highest_priced_item.name %></h2>
 <table>
   <tr>
     <td><h2>Merchant Name</h2></td>
