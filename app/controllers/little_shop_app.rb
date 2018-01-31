@@ -7,7 +7,11 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants' do
     @merchants = Merchant.where("name LIKE ?", "%#{params[:name]}%")
-    erb :"merchants/index"
+    if @merchants.empty?
+      erb :"missing"
+    else
+      erb :"merchants/index"
+    end
   end
 
   get '/merchants/new' do
@@ -16,8 +20,6 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants-dashboard' do
     @merchants = Merchant.all
-    @with_most_items = Merchant.most_items
-    @with_highest_price = Merchant.highest_priced_item
     erb :"merchants/dashboard"
   end
 
@@ -48,7 +50,11 @@ class LittleShopApp < Sinatra::Base
 
   get '/categories' do
     @categories = Category.where("name LIKE ?", "%#{params[:name]}%")
-    erb :"categories/index"
+    if @categories.empty?
+      erb :"missing"
+    else
+      erb :"categories/index"
+    end
   end
 
   get '/categories/new' do
@@ -86,20 +92,23 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
-    @most_recently_created = Item.most_recently_created
-    @oldest = Item.oldest
+    @items = Item.all
     erb :"items/dashboard"
   end
 
   get '/items' do
     @items = Item.where("title LIKE ?", "%#{params[:title]}%")
-    erb :"items/index"
+    if @items.empty?
+      erb :"missing"
+    else
+      erb :"items/index"
+    end
   end
 
   get '/items/new' do
-    @merchants = Merchant.all
-    @categories = Category.all
-    erb :"items/new"
+    @merchants = Merchant.alphabetized
+    @categories = Category.alphabetized
+    erb :"/items/new"
   end
 
   post '/items' do
@@ -108,6 +117,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/:id/edit' do
+    @merchants = Merchant.alphabetized
+    @categories = Category.alphabetized
     @item = Item.find(params[:id])
     erb :"items/edit"
   end
@@ -130,6 +141,11 @@ class LittleShopApp < Sinatra::Base
   get '/api/v1/items/:id' do |id|
     item = Item.find(id)
     item.to_json
+  end
+
+  not_found do
+    status 404
+    erb :"missing"
   end
 
 end

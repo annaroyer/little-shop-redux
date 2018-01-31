@@ -1,8 +1,10 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../merchant.css">
+  <link rel="stylesheet" type="text/css" href="../../../category.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
+
 <div class="top">
   <div class="banner">
     <a href="/"><img src="../../../images/little_shop_rusty50.png"/></a>
@@ -40,11 +42,15 @@
     </div>
   </div>
 </div>
-<h1>Categories</h1>
+
+<h1 class="ap_header">Categories</h1>
+
+<div class="cat">
+  <h3 class="ap_me">Category with Most Expensive Item: <%= @categories.most_expensive_item.name %></h3>
+  <h3 class="ap_le">Category with Least Expensive Item: <%= @categories.least_expensive_item.name %></h3>
+</div>
+<h1>Categories </h1>
 
 <% @categories.each do |category| %>
   <h5>Category: <%= category.name %>, Average Price: $<%= '%.2f' % category.average_item_price %></h5>
 <% end %>
-
-<h3>Category with Most Expensive Item: <%= Category.most_expensive_item.name %></h3>
-<h3>Category with Least Expensive Item: <%= Category.least_expensive_item.name %></h3>

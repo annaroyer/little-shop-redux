@@ -41,24 +41,8 @@
     </div>
   </div>
 </div>
+<audio src="../../audio/sad_404.mp3" controls autoplay></audio>
 <div class="container">
-  <div class="all-container">
-    <h1>You found them. Now stop clowning around.</h1>
-    <div class="returns">
-      <div class="return">
-        <div class="return_link">
-          <a href="/merchants/<%= @merchant.id %>"><p><%= @merchant.name %></p></a>
-        </div>
-        <div class="utility">
-          <form action="/merchants/<%= @merchant.id %>/edit" method="GET">
-            <input type="submit" value="Edit"/>
-          </form>
-          <form action="/merchants/<%= @merchant.id %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE"/>
-            <input type="submit" value="Delete"/>
-          </form>
-      </div>
-    </div>
-  </div>
-  <center><a href="/merchants">Return to Merchant Index</a></center>
+  <h1>What you are looking for cannot be found</h1><br>
+  <img src="../../../images/sad_clown.gif">
 </div>

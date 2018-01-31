@@ -3,25 +3,19 @@ class Merchant < ActiveRecord::Base
 
   has_many :items
 
-def self.most_items
-  select("merchants.*, count(items) AS count_by_merchant_id")
-    .joins(:items)
-    .group(:merchant_id, :id)
-    .order("count_by_merchant_id DESC")
-    .first
-end
-
-  def self.highest_priced_item
-      joins(:items)
-      .order("price DESC")
-      .first
+  def self.most_items
+    where("items_count >= ?", maximum(:items_count))
   end
 
   def total_price_of_items
-    items.sum(:price)
+    items.total_price
   end
 
-  def highest_priced_item
-    items.order("price DESC").first
+  def self.highest_priced_item
+    joins(:items).order("unit_price").last
+  end
+
+  def self.alphabetized
+    order(:name)
   end
 end

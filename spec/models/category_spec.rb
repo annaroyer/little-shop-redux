@@ -24,7 +24,10 @@ describe Category do
         category_3.items.create(title: "glitter", description: "dangerous", unit_price: 150, image: "sparklesplosion.jpg")
         category_3.items.create(title: "felt", description: "fuzzy", unit_price: 250, image: "piece-of-felt.jpg")
 
-        expect(Category.most_expensive_item.name).to eq("technology")
+        category_with_most_expensive_item = Category.most_expensive_item
+
+        expect(category_with_most_expensive_item.name).to eq(category_2.name)
+        expect(category_with_most_expensive_item.id).to eq(category_2.id)
       end
     end
 
@@ -42,7 +45,10 @@ describe Category do
         category_3.items.create(title: "glitter", description: "dangerous", unit_price: 150, image: "sparklesplosion.jpg")
         category_3.items.create(title: "felt", description: "fuzzy", unit_price: 250, image: "piece-of-felt.jpg")
 
-        expect(Category.least_expensive_item.name).to eq("crafts")
+        category_with_least_expensive_item = Category.least_expensive_item
+
+        expect(category_with_least_expensive_item.name).to eq(category_3.name)
+        expect(category_with_least_expensive_item.id).to eq(category_3.id)
       end
     end
   end

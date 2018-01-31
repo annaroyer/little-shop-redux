@@ -7,7 +7,7 @@ describe "As a user" do
 
       expect(page).to have_content("Mooing")
 
-      click_on "Delete Category"
+      click_on "Delete"
 
       expect(page).to_not have_content("Mooing")
       expect(Category.count).to eq(0)

@@ -1,7 +1,8 @@
 <head>
-  <link rel="stylesheet" type="text/css" href="../../../merchant.css">
+  <link rel="stylesheet" type="text/css" href="../../../main.css">
   <title>Don't Enter : Shop Inside</title>
   <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Josefin+Slab" rel="stylesheet">
 </head>
 <div class="top">
   <div class="banner">
@@ -42,12 +43,12 @@
 </div>
 <div class="container">
   <h1>Edit Merchant</h1>
-  <div class="merchant">
-      <center><form action="/merchants/<%= @merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="PUT"/>
-        <input class="form" type="text" name="merchant[name]" placeholder="<%= @merchant.name %>"/>
-        <input class="submit-button" type="submit" value="Edit"/>
-      </form></center>
-    </div>
+  <div class="return">
+    <center><form action="/merchants/<%= @merchant.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT"/>
+      <input class="form" type="text" name="merchant[name]" placeholder="<%= @merchant.name %>"/>
+      <input class="submit-button" type="submit" value="Edit"/>
+    </form></center>
   </div>
+  <center><a href="/merchants">Return to Merchant Index</a></center>
 </div>
