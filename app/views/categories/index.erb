@@ -46,18 +46,27 @@
     </div>
   </section>
 </nav>
-
-<h1>Categories</h1>
-
-<summary>
-<a href="/categories/new">Create A Category</a>
-</summary>
-<br>
-<% @categories.each do |category| %>
-  <a href="/categories/<%= category.id %>"><h2><%= category.name %></h2></a>
-  <a href="/categories/<%= category.id %>/edit">Edit Category</a>
-  <form action="/categories/<%= category.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Category">
-  </form>
-<% end %>
+<div class="container">
+  <div class="all-container">
+    <h1 class="page-title">You've found the categories?</h1>
+    <div class="returns">
+    <% @categories.each do |category| %>
+      <div class="return">
+        <div class="return_link">
+          <a href="/categories/<%= category.id %>"><p><%= category.name %></p></a>
+        </div>
+        <div class="utility">
+          <form action="/categories/<%= category.id %>/edit" method="GET">
+            <input type="submit" value="Edit"/>
+          </form>
+          <form action="/categories/<%= category.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input type="submit" value="Delete"/>
+          </form>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+  <a href="/categories"><div class="top_button">Top</div></a>
+</div>

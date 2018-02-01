@@ -58,13 +58,10 @@
             <a href="/items/<%= item.id %>"><h2 class="item-title"><%= item.title %></h2></a>
           <p class="item-price">$<%= '%.2f' % item.price %></p>
           <figcaption class="item-buttons">
-            <!-- <a href="/items/<%= item.id %>/edit"><button class="item-button">Edit</button></a> -->
-
 
             <form action="/items/<%= item.id %>/edit" method="GET">
                 <button type="submit">Edit</button>
             </form>
-
 
             <form action="/items/<%= item.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
@@ -74,4 +71,5 @@
       </figure>
     <% end %>
   </section>
+  <a href="/items"><div class="top_button">Top</div></a>
 </main>

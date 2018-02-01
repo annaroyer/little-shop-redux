@@ -48,12 +48,12 @@
 </nav>
 
 <div class="container">
-  <h1>Merchant With The Most Items:</h1>
+  <h1 class="page-title">Merchant(s) With The Most Items:</h1><br>
   <% @merchants.most_items.each do |merchant| %>
     <h2><%= merchant.name %></h2><br>
   <% end %>
-  <h1>Merchant with the Highest Priced Item:</h1>
-  <h2><%= @merchants.highest_priced_item.name %></a></h2>
+  <h1 class="page-title">Merchant(s) with the Highest Priced Item:</h1>
+  <h2><%= @merchants.highest_priced_item.name %></a></h2><br><br>
   <table>
     <tr>
       <td><h2>Merchant Name</h2></td>

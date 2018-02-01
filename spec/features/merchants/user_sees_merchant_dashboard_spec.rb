@@ -35,7 +35,7 @@ describe "As a user" do
 
       visit "/merchants-dashboard"
 
-      expect(page).to have_content("Merchant with the Highest Priced Item: Sherry")
+      expect(page).to have_content("Sherry")
     end
 
     describe "I can see a breakdown of each merchant" do
