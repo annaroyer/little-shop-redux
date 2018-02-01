@@ -47,7 +47,7 @@
   </section>
 </nav>
 
-<div class="container">
+<main class="container">
   <h1 class="page-title">Merchant(s) With The Most Items:</h1><br>
   <% @merchants.most_items.each do |merchant| %>
     <h2><%= merchant.name %></h2><br>
@@ -69,4 +69,4 @@
   <% end %>
   </table>
   <a href="/merchants-dashboard"><div class="top_button">Top</div></a>
-</div>
+</main>

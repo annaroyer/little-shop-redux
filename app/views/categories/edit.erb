@@ -46,14 +46,14 @@
     </div>
   </section>
 </nav>
-<div class="container">
+<main class="container">
   <h1 class="page-title">Clowns to the left of me</h1>
-  <div class="return">
+  <section class="return">
     <center><form action="/categories/<%= @category.id %>" method="POST">
       <input type="hidden" name="_method" value="PUT"/>
       <input class="form" type="text" name="category[name]" placeholder="<%= @category.name %>"/>
       <input class="submit-button" type="submit" value="Edit"/>
     </form></center>
-  </div>
+  </section>
   <center><a href="/categories">Return to Category Index</a></center>
-</div>
+</main>
