@@ -9,9 +9,7 @@ describe "As a user" do
       fill_in "item[description]", with: "soft and fluffy"
       fill_in "item[unit_price]", with: 35.00
       fill_in "item[image]", with: "http://tinypuppy.png"
-      within first('optgroup') do
-        select("cutesockz4987")
-      end
+      first('optgroup').click 'cutesockz4987'
 
       click_button "Create"
 
