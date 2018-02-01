@@ -46,12 +46,12 @@
     </div>
   </section>
 </nav>
-<div class="container">
-<h1 class="page-title">Categories </h1>
-<h1 class="page-title">Category with Most Expensive Item:<br><br> <%= @categories.most_expensive_item.name %></h1>
-<h1 class="page-title">Category with Least Expensive Item:<br><br> <%= @categories.least_expensive_item.name %></h1>
+<main class="container">
+  <h1 class="page-title">Category Dashboard</h1>
+  <h1 class="page-title">Category with Most Expensive Item:<br><br> <%= @categories.most_expensive_item.name %></h1>
+  <h1 class="page-title">Category with Least Expensive Item:<br><br> <%= @categories.least_expensive_item.name %></h1>
 
-<% @categories.each do |category| %>
-  <h5>Category: <%= category.name %>, Average Price: $<%= '%.2f' % category.average_item_price %></h5>
-<% end %>
+  <% @categories.each do |category| %>
+    <h5>Category: <%= category.name %>, Average Price: $<%= '%.2f' % category.average_item_price %></h5>
+  <% end %>
 </div>
