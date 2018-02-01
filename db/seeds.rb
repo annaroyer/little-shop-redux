@@ -10,7 +10,7 @@ class Seed
             "https://s3.amazonaws.com/backpackersverse/wp-content/uploads/2016/07/20100018/Ventriloquist-Doll-Speaks-In-Demonic-Tongues.jpg",
             "https://i.ebayimg.com/thumbs/images/g/vTAAAOSwsZJaZOzh/s-l225.jpg",
             "https://s-media-cache-ak0.pinimg.com/236x/a2/c1/c1/a2c1c1fd816c761a07dfe1c9e1c78e4c--creepy-dolls-siamese.jpg"
-            ]
+           ]
   count = 0
 
   CSV.foreach("./db/csv/merchants.csv", OPTIONS) do |row|

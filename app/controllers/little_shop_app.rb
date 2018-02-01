@@ -8,7 +8,7 @@ class LittleShopApp < Sinatra::Base
   get '/merchants' do
     @merchants = Merchant.where("name LIKE ?", "%#{params[:name]}%")
     if @merchants.empty?
-      redirect :"not_found"
+      redirect :not_found
     else
       erb :"merchants/index"
     end
@@ -51,7 +51,7 @@ class LittleShopApp < Sinatra::Base
   get '/categories' do
     @categories = Category.where("name LIKE ?", "%#{params[:name]}%")
     if @categories.empty?
-      redirect :"not_found"
+      redirect :not_found
     else
       erb :"categories/index"
     end
@@ -99,7 +99,7 @@ class LittleShopApp < Sinatra::Base
   get '/items' do
     @items = Item.where("title LIKE ?", "%#{params[:title]}%")
     if @items.empty?
-      redirect :"not_found"
+      redirect :not_found
     else
       erb :"items/index"
     end
@@ -147,5 +147,4 @@ class LittleShopApp < Sinatra::Base
     status 404
     erb :"missing"
   end
-
 end
