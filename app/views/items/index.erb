@@ -55,12 +55,11 @@
     <% @items.each do |item| %>
       <figure class="single-item">
           <a href="/items/<%= item.id %>"><img class="item-image" src="<%= item.image %>" alt="<%= item.title %>"/></a>
-            <a href="/items/<%= item.id %>"><h2 class="item-title"><%= item.title %></h2></a>
-          <p class="item-price">$<%= '%.2f' % item.price %></p>
+            <a href="/items/<%= item.id %>"><p class="item-title" alt="<%= item.title %>"><%= item.title %></p></a>
+          <center><p>$<%= '%.2f' % item.price %></p></center>
           <figcaption class="item-buttons">
-
             <form action="/items/<%= item.id %>/edit" method="GET">
-                <button type="submit">Edit</button>
+                <button class="item-button" type="submit">Edit</button>
             </form>
 
             <form action="/items/<%= item.id %>" method="POST">

@@ -8,7 +8,7 @@ describe "As a user" do
       fill_in "item[description]", with: "has little hands"
       fill_in "item[unit_price]", with: 55.00
       fill_in "item[image]", with: "http://fluffyraccoon.png"
-      click_button "Submit"
+      click_button "Edit"
 
       expect(current_path).to eq("/items/1")
       expect(page).to have_content("raccoon")
