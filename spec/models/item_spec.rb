@@ -46,5 +46,35 @@ describe Item do
         expect(Item.average_price).to eq(110.00)
       end
     end
+
+    describe ".oldest" do
+      it "returns the most recently created item" do
+        Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
+        most_recent = Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
+
+        expect(Item.most_recently_created).to eq(most_recent)
+      end
+    end
+
+    describe ".oldest" do
+      it "returns the most recently created item" do
+        oldest = Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
+        Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
+
+        expect(Item.oldest).to eq(oldest)
+      end
+    end
+
+    describe ".total_price" do
+      it "returns the total price of all items" do
+        Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
+        Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
+        Item.create(title: "pantalon", description: "viejo", unit_price: 3000, image: "banner.jpeg")
+
+        expect(Item.total_price).to eq(330)
+      end
+    end
   end
 end
