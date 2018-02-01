@@ -50,7 +50,7 @@
 <h1 class="page-title">Items Info</h1>
 <section class="container">
   <p>Total Items: <%= @items.count %></p>
-  <p>Average Price Per Item: $<%= @items.average_price %></p>
+  <p>Average Price Per Item: $<%= "%.2f" % @items.average_price %></p>
   <section class="items">
     <figure class="featured-item">
       <p>Most Recently Created Item:</p><br />
@@ -67,7 +67,7 @@
       <a href="/items/<%= @items.oldest.id %>">
         <img class="item-image" src="<%= @items.oldest.image %>" alt="<%= @items.oldest.title %>">
       </a>
-      <center><p>$<%= @items.oldest.price %></p></center>
+      <center><p>$<%= "%.2f" % @items.oldest.price %></p></center>
       <center><p>Created <%= @items.oldest.created_at %></p></center>
     </figure>
   </section>
