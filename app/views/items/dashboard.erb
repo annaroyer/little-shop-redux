@@ -48,21 +48,27 @@
 </nav>
 
 <h1 class="page-title">Items Info</h1>
-
-<p>Total Items: <%= @items.count %></p>
-<p>Average Price Per Item:<br> <%= @items.average_price %></p>
-<section class="items">
-  <figure class="special-item">
-    <p>Most Recently Created Item:</p>
-    <p><%= @items.most_recently_created.title %></p>
-    <img class="item-image" src="<%= @items.most_recently_created.image %>" alt="<%= @items.most_recently_created.title %>">
-    <p>$<%= "%.2f" % @items.most_recently_created.price %></p>
-    <p>Created <%= @items.most_recently_created.created_at %></p>
-  </figure>
-  <figure class="single-item">
-    <p>Oldest Item: <%= @items.oldest.title %></p>
-    <img class="item-image" src="<%= @items.oldest.image %>" alt="<%= @items.oldest.title %>">
-    <p>$<%= @items.oldest.price %></h5>
-    <p>Created <%= @items.oldest.created_at %></p>
-  </figure>
+<section class="container">
+  <p>Total Items: <%= @items.count %></p>
+  <p>Average Price Per Item: <%= @items.average_price %></p>
+  <section class="items">
+    <figure class="featured-item">
+      <p>Most Recently Created Item:</p><br />
+      <p><%= @items.most_recently_created.title %></p>
+      <a href="/items/<%= @items.most_recently_created.id %>">
+        <img class="item-image" src="<%= @items.most_recently_created.image %>" alt="<%= @items.most_recently_created.title %>">
+      </a>
+      <p>$<%= "%.2f" % @items.most_recently_created.price %></p>
+      <p>Created <%= @items.most_recently_created.created_at %></p>
+    </figure>
+    <figure class="single-item">
+      <p>Oldest Item:</p><br />
+      <p> <%= @items.oldest.title %></p>
+      <a href="/items/<%= @items.oldest.id %>">
+        <img class="item-image" src="<%= @items.oldest.image %>" alt="<%= @items.oldest.title %>">
+      </a>
+      <p>$<%= @items.oldest.price %></p>
+      <p>Created <%= @items.oldest.created_at %></p>
+    </figure>
+  </section>
 </section>
