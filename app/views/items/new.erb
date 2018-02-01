@@ -58,7 +58,7 @@
         <p><input type="number" name="item[unit_price]" placeholder="14.92"></p>
         <p><input type="url" name="item[image]" placeholder="Enter URL"></p><br>
         <p>Merchant:<br></p><br>
-        <select><optgroup value="Merchant">
+        <select><optgroup class="merchant-select" value="Merchant">
           <% @merchants.each do |merchant| %>
             <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
           <% end %>

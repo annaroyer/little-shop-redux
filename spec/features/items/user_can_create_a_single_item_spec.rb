@@ -2,6 +2,7 @@ describe "As a user" do
   describe "when I go to the item index page" do
     it "I can create a new item" do
       Merchant.create(name: 'cutesockz4987')
+      Category.create(name: 'animal clothing')
 
       visit '/items/new'
 
@@ -9,7 +10,6 @@ describe "As a user" do
       fill_in "item[description]", with: "soft and fluffy"
       fill_in "item[unit_price]", with: 35.00
       fill_in "item[image]", with: "http://tinypuppy.png"
-      first('optgroup').click 'cutesockz4987'
 
       click_button "Create"
 
