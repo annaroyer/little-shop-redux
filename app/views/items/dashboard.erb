@@ -58,8 +58,8 @@
       <a href="/items/<%= @items.most_recently_created.id %>">
         <img class="item-image" src="<%= @items.most_recently_created.image %>" alt="<%= @items.most_recently_created.title %>">
       </a>
-      <p>$<%= "%.2f" % @items.most_recently_created.price %></p>
-      <p>Created <%= @items.most_recently_created.created_at %></p>
+      <center><p>$<%= "%.2f" % @items.most_recently_created.price %></p></center>
+      <center><p>Created <%= @items.most_recently_created.created_at.strftime("%B %d, %C") %></p></center>
     </figure>
     <figure class="single-item">
       <p>Oldest Item:</p><br />
@@ -68,7 +68,7 @@
         <img class="item-image" src="<%= @items.oldest.image %>" alt="<%= @items.oldest.title %>">
       </a>
       <center><p>$<%= "%.2f" % @items.oldest.price %></p></center>
-      <center><p>Created <%= @items.oldest.created_at %></p></center>
+      <center><p>Created <%= @items.oldest.created_at.strftime("%B %d, %C") %></p></center>
     </figure>
   </section>
 </section>
