@@ -47,7 +47,7 @@ describe Item do
       end
     end
 
-    describe ".oldest" do
+    describe ".most_expensive_item" do
       it "returns the most recently created item" do
         Item.create(title: "dress", description: "vintage", unit_price: 25000, image: "banner.jpeg")
         Item.create(title: "shirt", description: "small", unit_price: 5000, image: "banner.jpeg")
