@@ -6,12 +6,12 @@ describe "As a user" do
       visit "categories"
 
       click_on "Edit"
-      
+
       expect(current_path).to eq("/categories/1/edit")
 
       fill_in "category[name]", with: "Running"
 
-      click_button "Submit"
+      click_button "Edit"
 
       expect(current_path).to eq("/categories/1")
       expect(page).to have_content("Running")
