@@ -69,7 +69,6 @@ a:active {
 
 .dropdown:hover {
   background-color: #4f4f4f;
-  cursor: hand;
 }
 
 .dropdown-content {
