@@ -46,33 +46,31 @@
     </div>
   </section>
 </nav>
-
-<h1 class="page-title">New Item</h1>
-<main class="item-form">
-  <form action="/items" method="POST">
-    <p>Title:</p><br>
-    <input type="text" name="item[title]"/><br><br>
-    <p>Description:</p><br>
-    <textarea name="item[description]"></textarea><br><br>
-    <p>Price:<br></p>
-    <figure class="price-input">
-      <p>$</p>
-      <input type="number" step="0.01" name="item[unit_price]"/><br><br>
+<main class="container">
+  <h1 class="page-title">Create New Item</h1>
+  <section class="create-container">
+    <div class="side"></div>
+    <figure class="create">
+      <form action="/items" method="POST">
+        <p><input type="text" name="item[title]" placeholder="Enter Title..."></p>
+        <p><input type="text" name="item[description]" placeholder="Enter Description..."></p>
+        <p><input type="number" name="item[unit_price]" placeholder="14.92"></p>
+        <p><input type="url" name="item[image]" placeholder="Enter URL"></p><br>
+        <p>Merchant:<br></p><br>
+        <select><optgroup value="Merchant">
+          <% @merchants.each do |merchant| %>
+            <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
+            <% end %>
+        </optgroup></select><br><br>
+        <p>Category:<br></p><br>
+        <select><optgroup>
+          <% @categories.each do |category| %>
+            <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
+            <% end %>
+        </optgroup></select><br><br>
+        <input type="submit" value="Create">
+      </form>
     </figure>
-    <p>Image URL:<br></p>
-    <input type="url" name="item[image]"/><br><br>
-    <p>Merchant:<br></p>
-    <select><optgroup value="Merchant">
-      <% @merchants.each do |merchant| %>
-        <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
-        <% end %>
-    </optgroup></select><br><br>
-    <p>Category:<br></p>
-    <select><optgroup>
-      <% @categories.each do |category| %>
-        <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
-        <% end %>
-    </optgroup></select><br><br>
-    <input type="submit" value="Submit"/>
-  </form>
+  </section>
+  <br><center><a href="/items">Return to Item Index</a></center>
 </main>
