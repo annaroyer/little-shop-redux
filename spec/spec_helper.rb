@@ -9,6 +9,7 @@ require 'capybara/dsl'
 require 'capybara/rspec'
 
 Capybara.app = LittleShopApp
+Capybara.match = :first
 
 DatabaseCleaner.strategy = :truncation
 

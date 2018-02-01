@@ -46,6 +46,7 @@
     </div>
   </section>
 </nav>
+
 <main class="container">
   <h1 class="page-title">Create New Item</h1>
   <section class="create-container">
@@ -57,16 +58,16 @@
         <p><input type="number" name="item[unit_price]" placeholder="14.92"></p>
         <p><input type="url" name="item[image]" placeholder="Enter URL"></p><br>
         <p>Merchant:<br></p><br>
-        <select><optgroup value="Merchant">
+        <select><optgroup class="merchant-select" value="Merchant">
           <% @merchants.each do |merchant| %>
             <option name="item[merchant_id]" value="<%= merchant.id %>"/><%= merchant.name %></option>
-            <% end %>
+          <% end %>
         </optgroup></select><br><br>
         <p>Category:<br></p><br>
         <select><optgroup>
           <% @categories.each do |category| %>
             <option name="item[category_id]" value="<%= category.id %>"/><%= category.name %></option>
-            <% end %>
+          <% end %>
         </optgroup></select><br><br>
         <input type="submit" value="Create">
       </form>
