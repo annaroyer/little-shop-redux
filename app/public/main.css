@@ -385,7 +385,7 @@ a:active {
 .item-title {
   text-align: center;
   white-space: nowrap;
-  width: 12em;
+  width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 10px;
@@ -393,16 +393,21 @@ a:active {
 
 .item-buttons {
   display: flex;
-  margin: 5px;
+  justify-content: flex-end;
 }
 
 .item-button {
   background-color: black;
-  color: white;
+  color: #fff;
   font: 15px 'Josefin Slab';
   margin: 10px;
   padding: 10px;
   border-style: outset;
+}
+
+.item-button:hover {
+  border-color: red;
+  cursor: hand;
 }
 
 .item-image {
@@ -419,7 +424,7 @@ a:active {
 
 .price-input {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 571px) {
